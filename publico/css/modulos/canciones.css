@@ -1,0 +1,280 @@
+/* Estilos para el módulo Canciones y Reproductor con LRC */
+.canciones-seccion {
+  margin: var(--espaciado-l) 0 var(--espaciado-2xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-l);
+}
+
+.canciones-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+}
+
+.canciones-filtros {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+  align-items: center;
+}
+
+.canciones-contenedor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--espaciado-l);
+  align-items: flex-start;
+}
+
+@media (max-width: 860px) {
+  .canciones-contenedor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lista de canciones */
+.canciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+}
+
+.cancion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espaciado-m);
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  cursor: pointer;
+  transition: border-color var(--transicion), box-shadow var(--transicion), background-color var(--transicion);
+  gap: var(--espaciado-s);
+}
+
+.cancion-item:hover {
+  border-color: var(--primario);
+  background-color: var(--fondo);
+}
+
+.cancion-item--activa {
+  border-color: var(--acento);
+  background-color: var(--superficie-suave);
+  box-shadow: 0 0 0 1px var(--acento);
+}
+
+.cancion-item__icono {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radio-completo);
+  background-color: var(--fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--tamano-m);
+  flex-shrink: 0;
+  border: 1px solid var(--borde);
+}
+
+.cancion-item--activa .cancion-item__icono {
+  background-color: var(--acento);
+  color: var(--primario);
+}
+
+.cancion-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.cancion-item__titulo {
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  margin: 0;
+}
+
+.cancion-item__meta {
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaciado-xs);
+  align-items: center;
+}
+
+/* Reproductor custom */
+.reproductor-panel {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  padding: var(--espaciado-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-l);
+}
+
+.reproductor-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+  border-bottom: 1px solid var(--borde);
+  padding-bottom: var(--espaciado-m);
+}
+
+.reproductor-titulo {
+  font-size: var(--tamano-l);
+  color: var(--primario);
+  margin: 0;
+}
+
+.reproductor-meta {
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-s);
+}
+
+/* Controles */
+.reproductor-controles-fila {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-m);
+  flex-wrap: wrap;
+}
+
+.btn-play-pausa {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radio-completo);
+  background-color: var(--primario);
+  color: var(--texto-inverso);
+  border: none;
+  font-size: var(--tamano-l);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--transicion), background-color var(--transicion);
+  flex-shrink: 0;
+}
+
+.btn-play-pausa:hover {
+  background-color: var(--secundario);
+  transform: scale(1.05);
+}
+
+.btn-play-pausa:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+
+.reproductor-barra-tiempo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  flex: 1;
+}
+
+.tiempo-etiqueta {
+  font-size: var(--tamano-xs);
+  font-family: monospace;
+  color: var(--texto-suave);
+  min-width: 42px;
+}
+
+.barra-tiempo {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--borde);
+  border-radius: var(--radio-completo);
+  outline: none;
+  cursor: pointer;
+}
+
+.barra-tiempo::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radio-completo);
+  background-color: var(--primario);
+  cursor: pointer;
+  transition: transform var(--transicion);
+}
+
+.barra-tiempo::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.control-volumen-caja {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  font-size: var(--tamano-s);
+  color: var(--texto-suave);
+}
+
+.control-volumen {
+  width: 70px;
+  height: 6px;
+  cursor: pointer;
+}
+
+/* Panel de Letras y LRC */
+.panel-letras {
+  background-color: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  height: 320px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+}
+
+.linea-lrc {
+  padding: var(--espaciado-xs) var(--espaciado-s);
+  border-radius: var(--radio-s);
+  font-size: var(--tamano-s);
+  line-height: var(--interlineado-amplio);
+  color: var(--texto-suave);
+  transition: background-color 0.25s ease, color 0.25s ease, font-weight 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+}
+
+.linea-lrc:hover {
+  background-color: var(--superficie);
+  color: var(--texto);
+}
+
+.linea-lrc--activa {
+  color: var(--primario);
+  font-weight: var(--peso-negrita);
+  font-size: var(--tamano-base);
+  background-color: var(--superficie);
+  border-left: 3px solid var(--acento);
+  transform: translateX(4px);
+}
+
+.letra-plana {
+  white-space: pre-wrap;
+  font-size: var(--tamano-s);
+  line-height: var(--interlineado-amplio);
+  color: var(--texto);
+  font-family: inherit;
+  margin: 0;
+}

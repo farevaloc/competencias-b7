@@ -1,0 +1,305 @@
+/* ==========================================================================
+   publico/css/modulos/quiz.css
+   Estilos específicos para la página del quiz y niveles cognitivos
+   ========================================================================== */
+
+.quiz-cabecera {
+  margin-bottom: var(--espaciado-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+}
+
+.quiz-cabecera__fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+}
+
+.quiz-cabecera__titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  margin: 0;
+}
+
+.quiz-tema-activo {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-s);
+}
+
+/* Grilla de niveles */
+.quiz-niveles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espaciado-m);
+  margin-top: var(--espaciado-m);
+}
+
+.tarjeta-nivel {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--espaciado-m);
+  transition: all var(--transicion);
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta-nivel--aprobado {
+  border-color: var(--exito);
+  background: linear-gradient(180deg, #f0fdf4 0%, var(--superficie) 40%);
+}
+
+.tarjeta-nivel--disponible {
+  border-color: var(--primario);
+  box-shadow: var(--sombra-s);
+}
+
+.tarjeta-nivel--bloqueado {
+  background-color: var(--fondo);
+  opacity: 0.75;
+}
+
+.tarjeta-nivel__cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--espaciado-s);
+}
+
+.tarjeta-nivel__numero {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tarjeta-nivel__nombre {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  margin: var(--espaciado-xs) 0 0 0;
+}
+
+.tarjeta-nivel__estado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  padding: 3px 8px;
+  border-radius: var(--radio-pildora);
+}
+
+.tarjeta-nivel__estado-badge--aprobado {
+  background-color: #dcfce7;
+  color: var(--exito);
+}
+
+.tarjeta-nivel__estado-badge--disponible {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.tarjeta-nivel__estado-badge--bloqueado {
+  background-color: var(--borde);
+  color: var(--texto-suave);
+}
+
+.tarjeta-nivel__porcentaje {
+  font-size: var(--tamano-s);
+  color: var(--texto-suave);
+}
+
+.tarjeta-nivel__barra {
+  width: 100%;
+  height: 6px;
+  background-color: var(--borde);
+  border-radius: var(--radio-pildora);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.tarjeta-nivel__barra-llenado {
+  height: 100%;
+  background-color: var(--exito);
+  border-radius: var(--radio-pildora);
+  transition: width 0.3s ease;
+}
+
+.tarjeta-nivel__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+}
+
+/* Área de evaluación en vivo */
+.quiz-evaluacion {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-xl);
+  max-width: 760px;
+  margin: 0 auto;
+  box-shadow: var(--sombra-m);
+}
+
+.quiz-progreso {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+  margin-bottom: var(--espaciado-l);
+}
+
+.quiz-progreso__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--primario);
+}
+
+.quiz-progreso__barra {
+  width: 100%;
+  height: 8px;
+  background-color: var(--fondo);
+  border-radius: var(--radio-pildora);
+  overflow: hidden;
+}
+
+.quiz-progreso__relleno {
+  height: 100%;
+  background-color: var(--primario);
+  transition: width 0.3s ease;
+}
+
+.quiz-enunciado {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-seminegrita);
+  color: var(--texto);
+  line-height: var(--interlineado-base);
+  margin-bottom: var(--espaciado-l);
+}
+
+/* Opciones de opción múltiple como botones de radio grandes */
+.quiz-opciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+  margin-bottom: var(--espaciado-l);
+}
+
+.quiz-opcion-label {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-m);
+  padding: var(--espaciado-m);
+  border: 2px solid var(--borde);
+  border-radius: var(--radio-m);
+  background-color: var(--superficie);
+  cursor: pointer;
+  transition: all var(--transicion);
+  font-size: var(--tamano-m);
+}
+
+.quiz-opcion-label:hover {
+  border-color: var(--primario);
+  background-color: var(--fondo);
+}
+
+.quiz-opcion-label:has(input:checked) {
+  border-color: var(--primario);
+  background-color: #f0f7fa;
+  font-weight: var(--peso-seminegrita);
+}
+
+.quiz-opcion-radio {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primario);
+  cursor: pointer;
+}
+
+/* Verdadero y Falso como dos botones grandes */
+.quiz-vf-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaciado-m);
+  margin-bottom: var(--espaciado-l);
+}
+
+.quiz-vf-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaciado-xs);
+  padding: var(--espaciado-l);
+  border: 2px solid var(--borde);
+  border-radius: var(--radio-m);
+  background-color: var(--superficie);
+  cursor: pointer;
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--texto);
+  transition: all var(--transicion);
+}
+
+.quiz-vf-btn:hover {
+  border-color: var(--primario);
+  background-color: var(--fondo);
+}
+
+.quiz-vf-btn--seleccionado {
+  border-color: var(--primario);
+  background-color: #f0f7fa;
+  color: var(--primario);
+}
+
+/* Campo de texto para completar */
+.quiz-completar-contenedor {
+  margin-bottom: var(--espaciado-l);
+}
+
+.quiz-completar-input {
+  width: 100%;
+  font-size: var(--tamano-m);
+  padding: var(--espaciado-m);
+  border: 2px solid var(--borde);
+  border-radius: var(--radio-m);
+}
+
+.quiz-completar-input:focus {
+  border-color: var(--primario);
+  outline: none;
+}
+
+.quiz-acciones-pie {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--espaciado-s);
+  padding-top: var(--espaciado-m);
+  border-top: 1px solid var(--borde);
+}
+
+@media (max-width: 600px) {
+  .quiz-vf-contenedor {
+    grid-template-columns: 1fr;
+  }
+}

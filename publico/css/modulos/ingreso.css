@@ -1,0 +1,36 @@
+/* Estilos para el módulo de ingreso */
+.ingreso-seccion {
+  max-width: 440px;
+  margin: var(--espaciado-xl) auto;
+}
+
+.ingreso-tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  padding: var(--espaciado-xl);
+  box-shadow: var(--sombra-2);
+}
+
+.ingreso-encabezado {
+  text-align: center;
+  margin-bottom: var(--espaciado-l);
+}
+
+.ingreso-encabezado h1 {
+  font-size: var(--tamano-xl);
+  color: var(--primario);
+  margin-bottom: var(--espaciado-xs);
+}
+
+.ingreso-encabezado p {
+  color: var(--texto-suave);
+  font-size: var(--tamano-s);
+}
+
+.ingreso-pie {
+  margin-top: var(--espaciado-l);
+  text-align: center;
+  font-size: var(--tamano-s);
+  color: var(--texto-suave);
+}

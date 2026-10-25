@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Estilos · Design System UNEMI</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <style>
+    /* Estilos estructurales auxiliares específicos para la exhibición de la guía */
+    .guia-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+    .guia-contenido {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .guia-seccion {
+      padding: var(--espaciado-xl) 0;
+      border-bottom: 1px solid var(--borde);
+    }
+    .guia-seccion:last-of-type {
+      border-bottom: none;
+    }
+    .muestra-color {
+      border: 1px solid var(--borde);
+      border-radius: var(--radio-m);
+      overflow: hidden;
+      background-color: var(--superficie);
+    }
+    .muestra-color__caja {
+      height: 70px;
+      width: 100%;
+    }
+    .muestra-color__detalle {
+      padding: var(--espaciado-s);
+      font-size: var(--tamano-xs);
+    }
+    .muestra-color__nombre {
+      font-weight: var(--peso-negrita);
+      color: var(--primario);
+    }
+    .muestra-color__hex {
+      color: var(--texto-suave);
+    }
+  </style>
+</head>
+<body>
+  <div class="guia-layout">
+    <!-- Menú lateral -->
+    <nav class="menu" id="menuLateral" aria-label="Navegación de la guía de estilos">
+      <div class="menu__titulo">Design System</div>
+      <a href="#encabezados" class="activo">Encabezado y Navegación</a>
+      <a href="#colores">Paleta de Colores</a>
+      <a href="#tipografia">Tipografía</a>
+      <a href="#botones">Botones</a>
+      <a href="#tarjetas">Tarjetas</a>
+      <a href="#campos">Formularios y Campos</a>
+      <a href="#alertas">Alertas</a>
+      <a href="#tablas">Tablas</a>
+      <a href="#insignias-chips">Insignias y Chips</a>
+      <a href="#progreso-carga">Progreso y Carga</a>
+      <a href="#modales-toasts">Modales y Avisos</a>
+      <a href="#vacio">Estado Vacío</a>
+      <a href="#pie-pagina">Pie de Página</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="guia-contenido">
+      <!-- Encabezado del sistema -->
+      <header class="encabezado" id="encabezados">
+        <div class="fila" style="gap: var(--espaciado-s);">
+          <button type="button" class="btn btn--secundario btn--pequeno menu-alternar" id="btnAlternarMenu" aria-label="Abrir o cerrar menú lateral">
+            ☰ Menú
+          </button>
+          <div class="encabezado__logo">
+            <span>UNEMI</span>
+            <small style="font-size: var(--tamano-xs); color: var(--acento); font-weight: var(--peso-regular);">Ecosistema Digital</small>
+          </div>
+        </div>
+        <div class="encabezado__acciones">
+          <span class="chip">v1.0 Design System</span>
+          <a href="#botones" class="btn btn--primario btn--pequeno" style="border-color: var(--texto-inverso);">Componentes</a>
+        </div>
+      </header>
+
+      <main class="contenedor" style="padding-top: var(--espaciado-l); padding-bottom: var(--espaciado-2xl);">
+        <header style="margin-bottom: var(--espaciado-xl);">
+          <span class="chip" style="margin-bottom: var(--espaciado-s);">Catálogo Visual</span>
+          <h1>Guía de Estilos y Componentes</h1>
+          <p style="color: var(--texto-suave); font-size: var(--tamano-l); max-width: 800px;">
+            Biblioteca construida con HTML semántico, CSS moderno y tokens institucionales. Cumple con accesibilidad WCAG AA y diseño responsivo desde 360 px.
+          </p>
+        </header>
+
+        <!-- Sección: Colores -->
+        <section class="guia-seccion" id="colores">
+          <h2>1. Paleta de Colores (Tokens)</h2>
+          <p>Valores normativos institucionales y tokens de superficie con contraste calculado.</p>
+          <div class="grid-auto">
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--primario);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--primario</div>
+                <div class="muestra-color__hex">#002E45 · AAA</div>
+              </div>
+            </div>
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--primario-oscuro);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--primario-oscuro</div>
+                <div class="muestra-color__hex">#1C3247 · AAA</div>
+              </div>
+            </div>
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--secundario);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--secundario</div>
+                <div class="muestra-color__hex">#264763 · AAA</div>
+              </div>
+            </div>
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--acento);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--acento</div>
+                <div class="muestra-color__hex">#FF6900 · Acento</div>
+              </div>
+            </div>
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--exito);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--exito</div>
+                <div class="muestra-color__hex">#1D6540 · AA</div>
+              </div>
+            </div>
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--advertencia);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--advertencia</div>
+                <div class="muestra-color__hex">#993D00 · AA</div>
+              </div>
+            </div>
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--error);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--error</div>
+                <div class="muestra-color__hex">#B22222 · AA</div>
+              </div>
+            </div>
+            <div class="muestra-color">
+              <div class="muestra-color__caja" style="background-color: var(--info);"></div>
+              <div class="muestra-color__detalle">
+                <div class="muestra-color__nombre">--info</div>
+                <div class="muestra-color__hex">#14648E · AA</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Tipografía -->
+        <section class="guia-seccion" id="tipografia">
+          <h2>2. Tipografía y Jerarquía</h2>
+          <div class="tarjeta">
+            <h1 style="margin-bottom: var(--espaciado-xs);">H1 · Titular Principal (3xl)</h1>
+            <h2 style="margin-bottom: var(--espaciado-xs);">H2 · Subtítulo de Sección (2xl)</h2>
+            <h3 style="margin-bottom: var(--espaciado-xs);">H3 · Título de Módulo o Tarjeta (xl)</h3>
+            <h4 style="margin-bottom: var(--espaciado-xs);">H4 · Encabezado Menor (l)</h4>
+            <p>
+              Párrafo base en Poppins regular. La Universidad Estatal de Milagro promueve un ecosistema de aprendizaje digital centrado en el estudiante, combinando rigor pedagógico con innovación tecnológica y accesibilidad universal.
+            </p>
+            <p>
+              <small>Texto auxiliar en etiqueta small (xs) para metadatos, pistas o notas al pie.</small>
+            </p>
+            <div class="fila">
+              <a href="#tipografia">Enlace interactivo normal</a>
+              <span style="color: var(--texto-suave);">|</span>
+              <strong>Texto en negrita institucional</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Botones -->
+        <section class="guia-seccion" id="botones">
+          <h2>3. Botones (.btn)</h2>
+          <p>Variantes de control con estados interactivos (reposo, foco, activo y deshabilitado).</p>
+          <div class="tarjeta">
+            <div class="fila" style="gap: var(--espaciado-m); margin-bottom: var(--espaciado-m);">
+              <button type="button" class="btn btn--primario">Acción Primaria (.btn--primario)</button>
+              <button type="button" class="btn btn--secundario">Secundario (.btn--secundario)</button>
+              <button type="button" class="btn btn--acento">Destacado (.btn--acento)</button>
+              <button type="button" class="btn btn--peligro">Peligro (.btn--peligro)</button>
+              <button type="button" class="btn btn--texto">Enlace Texto (.btn--texto)</button>
+              <button type="button" class="btn btn--primario" disabled>Deshabilitado</button>
+            </div>
+            <div class="fila" style="gap: var(--espaciado-s);">
+              <button type="button" class="btn btn--primario btn--pequeno">Primario pequeño</button>
+              <button type="button" class="btn btn--secundario btn--pequeno">Secundario pequeño</button>
+              <button type="button" class="btn btn--peligro btn--pequeno">Peligro pequeño</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Tarjetas -->
+        <section class="guia-seccion" id="tarjetas">
+          <h2>4. Tarjetas (.tarjeta)</h2>
+          <div class="grid-auto">
+            <article class="tarjeta">
+              <h3>Tarjeta Estándar</h3>
+              <p>Contenedor de información con borde, radio de esquina y sombra suave de elevación 1.</p>
+              <button type="button" class="btn btn--secundario btn--pequeno">Explorar</button>
+            </article>
+            <article class="tarjeta tarjeta--destacada">
+              <span class="chip" style="margin-bottom: var(--espaciado-s);">Recomendado</span>
+              <h3>Tarjeta Destacada</h3>
+              <p>Incorpora una línea superior con el color de acento para jerarquizar el contenido.</p>
+              <button type="button" class="btn btn--acento btn--pequeno">Continuar</button>
+            </article>
+          </div>
+        </section>
+
+        <!-- Sección: Formularios y Campos -->
+        <section class="guia-seccion" id="campos">
+          <h2>5. Formularios y Campos (.campo)</h2>
+          <form class="tarjeta" onsubmit="event.preventDefault();" style="max-width: 680px;">
+            <div class="campo">
+              <label for="campoNombre">Nombre completo</label>
+              <input type="text" id="campoNombre" name="nombre" placeholder="Ej. Ana Morales" required>
+            </div>
+            <div class="campo">
+              <label for="campoRol">Rol en la plataforma</label>
+              <select id="campoRol" name="rol">
+                <option value="estudiante">Estudiante</option>
+                <option value="docente">Docente</option>
+                <option value="admin">Administrador</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="campoComentario">Observaciones o consulta</label>
+              <textarea id="campoComentario" name="comentario" placeholder="Escribe un mensaje explicativo..."></textarea>
+            </div>
+            <div class="campo">
+              <label for="campoErrorEjemplo">Campo con error de validación</label>
+              <input type="email" id="campoErrorEjemplo" value="correo-invalido" aria-describedby="errorCorreo" style="border-color: var(--error);">
+              <span class="campo__error" id="errorCorreo">Por favor ingresa un correo electrónico válido.</span>
+            </div>
+            <div class="fila" style="justify-content: flex-end;">
+              <button type="reset" class="btn btn--secundario">Restablecer</button>
+              <button type="submit" class="btn btn--primario">Enviar Formulario</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Sección: Alertas -->
+        <section class="guia-seccion" id="alertas">
+          <h2>6. Alertas (.alerta)</h2>
+          <div class="pila">
+            <div class="alerta alerta--info" role="status">
+              <div>
+                <strong>Información general:</strong> El período de inscripción al módulo de competencias digitales se encuentra habilitado.
+              </div>
+            </div>
+            <div class="alerta alerta--exito" role="status">
+              <div>
+                <strong>Operación exitosa:</strong> Tus respuestas y puntaje han sido guardados correctamente en el ecosistema.
+              </div>
+            </div>
+            <div class="alerta alerta--advertencia" role="alert">
+              <div>
+                <strong>Atención:</strong> Tienes tareas pendientes por finalizar antes del cierre del sprint actual.
+              </div>
+            </div>
+            <div class="alerta alerta--error" role="alert">
+              <div>
+                <strong>Error en la solicitud:</strong> No se pudo conectar con el servicio. Por favor intenta nuevamente.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Tablas -->
+        <section class="guia-seccion" id="tablas">
+          <h2>7. Tablas (.tabla con desplazamiento en celular)</h2>
+          <p>Tabla accesible encapsulada en contenedor con scroll horizontal táctil para móviles.</p>
+          <div class="tabla-contenedor">
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Asignatura</th>
+                  <th scope="col">Docente</th>
+                  <th scope="col">Nivel</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>asi_000001</td>
+                  <td>Competencias Digitales</td>
+                  <td>Ing. Carlos Mendoza</td>
+                  <td>B7</td>
+                  <td><span class="insignia insignia--exito">Activa</span></td>
+                  <td><button type="button" class="btn btn--texto btn--pequeno">Ver tema</button></td>
+                </tr>
+                <tr>
+                  <td>asi_000002</td>
+                  <td>Pensamiento Computacional</td>
+                  <td>Lcda. Patricia Suárez</td>
+                  <td>B7</td>
+                  <td><span class="insignia insignia--exito">Activa</span></td>
+                  <td><button type="button" class="btn btn--texto btn--pequeno">Ver tema</button></td>
+                </tr>
+                <tr>
+                  <td>asi_000003</td>
+                  <td>Metodologías Ágiles</td>
+                  <td>Dr. Fernando Arévalo</td>
+                  <td>B8</td>
+                  <td><span class="chip">Borrador</span></td>
+                  <td><button type="button" class="btn btn--texto btn--pequeno">Editar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Sección: Insignias y Chips -->
+        <section class="guia-seccion" id="insignias-chips">
+          <h2>8. Insignias (.insignia) y Chips (.chip)</h2>
+          <div class="tarjeta">
+            <div class="pila">
+              <div>
+                <h4 style="margin-bottom: var(--espaciado-s);">Insignias de gamificación y estado</h4>
+                <div class="fila">
+                  <span class="insignia">Nivel 1</span>
+                  <span class="insignia insignia--acento">Quiz Perfecto</span>
+                  <span class="insignia insignia--exito">Completado</span>
+                  <span class="insignia">150 Puntos</span>
+                </div>
+              </div>
+              <hr>
+              <div>
+                <h4 style="margin-bottom: var(--espaciado-s);">Chips de metadatos y filtros</h4>
+                <div class="fila">
+                  <span class="chip">Unidad 1</span>
+                  <span class="chip">Tema 3</span>
+                  <span class="chip">Modalidad En Línea</span>
+                  <span class="chip">Docencia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Progreso y Carga -->
+        <section class="guia-seccion" id="progreso-carga">
+          <h2>9. Progreso (.progreso) e Indicador de Carga (.cargando)</h2>
+          <div class="tarjeta">
+            <div class="pila">
+              <div>
+                <div class="fila" style="justify-content: space-between; margin-bottom: var(--espaciado-xs);">
+                  <strong>Progreso de la unidad:</strong>
+                  <span>75%</span>
+                </div>
+                <div class="progreso" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso de unidad">
+                  <span style="width: 75%;"></span>
+                </div>
+              </div>
+              <div>
+                <div class="fila" style="justify-content: space-between; margin-bottom: var(--espaciado-xs);">
+                  <strong>Evaluaciones superadas:</strong>
+                  <span>40%</span>
+                </div>
+                <div class="progreso progreso--primario" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Evaluaciones">
+                  <span style="width: 40%;"></span>
+                </div>
+              </div>
+              <hr>
+              <div>
+                <h4 style="text-align: center; margin-bottom: var(--espaciado-xs);">Indicador de carga</h4>
+                <div class="cargando" role="status" aria-label="Cargando contenido"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Modales y Toasts -->
+        <section class="guia-seccion" id="modales-toasts">
+          <h2>10. Diálogos Modales (.modal) y Avisos (.toast)</h2>
+          <p>Prueba los componentes accesibles integrados con <code>ui.js</code>.</p>
+          <div class="tarjeta">
+            <div class="fila">
+              <button type="button" class="btn btn--primario" id="btnProbarModal">
+                Abrir Modal Accesible
+              </button>
+              <button type="button" class="btn btn--secundario" id="btnProbarConfirmar">
+                Abrir Confirmación
+              </button>
+              <button type="button" class="btn btn--secundario" id="btnAvisoExito">
+                Lanzar Toast Éxito
+              </button>
+              <button type="button" class="btn btn--peligro btn--pequeno" id="btnAvisoError">
+                Lanzar Toast Error
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección: Estado Vacío -->
+        <section class="guia-seccion" id="vacio">
+          <h2>11. Estado Vacío (.vacio)</h2>
+          <div class="vacio">
+            <div class="vacio__icono" aria-hidden="true">📂</div>
+            <h3 class="vacio__titulo">No hay actividades registradas</h3>
+            <p class="vacio__texto">
+              Aún no has participado en quizes ni simulaciones para esta unidad. Comienza seleccionando un tema en el catálogo.
+            </p>
+            <button type="button" class="btn btn--primario btn--pequeno" style="margin-top: var(--espaciado-s);">
+              Explorar Catálogo
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <!-- Pie de página institucional -->
+      <footer class="pie" id="pie-pagina">
+        <div class="contenedor">
+          <p style="margin-bottom: var(--espaciado-xs);">
+            <strong>Universidad Estatal de Milagro — UNEMI</strong> · Ecosistema Educativo Digital
+          </p>
+          <p style="margin: 0;">
+            <small>Plataforma modular con arquitectura accesible y componentes nativos sin dependencias.</small>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Script interactivo de la guía de estilos -->
+  <script type="module">
+    import { aviso, modal, confirmar } from '/js/nucleo/ui.js';
+
+    // Manejo de menú lateral en celular
+    const menuLateral = document.getElementById('menuLateral');
+    const btnAlternarMenu = document.getElementById('btnAlternarMenu');
+
+    if (btnAlternarMenu && menuLateral) {
+      btnAlternarMenu.addEventListener('click', () => {
+        menuLateral.classList.toggle('abierto');
+      });
+
+      menuLateral.querySelectorAll('a').forEach(enlace => {
+        enlace.addEventListener('click', () => {
+          menuLateral.classList.remove('abierto');
+        });
+      });
+    }
+
+    // Pruebas interactivas con ui.js
+    document.getElementById('btnProbarModal')?.addEventListener('click', async () => {
+      const res = await modal({
+        titulo: 'Ventana Modal Accesible',
+        contenido: 'Este diálogo cuenta con foco atrapado en el teclado, soporte para tecla Esc y cierre al presionar fuera o en cualquier acción.',
+        acciones: [
+          { texto: 'Cancelar', valor: null, clase: 'btn--secundario' },
+          { texto: 'Entendido', valor: 'ok', clase: 'btn--primario', principal: true }
+        ]
+      });
+      if (res) aviso(`Seleccionaste: ${res}`, 'info');
+    });
+
+    document.getElementById('btnProbarConfirmar')?.addEventListener('click', async () => {
+      const aceptado = await confirmar('¿Estás seguro de que deseas guardar los cambios?');
+      aviso(aceptado ? 'Confirmación aceptada' : 'Acción cancelada', aceptado ? 'exito' : 'info');
+    });
+
+    document.getElementById('btnAvisoExito')?.addEventListener('click', () => {
+      aviso('¡Operación completada con éxito en el sistema!', 'exito');
+    });
+
+    document.getElementById('btnAvisoError')?.addEventListener('click', () => {
+      aviso('Ocurrió un error al procesar la solicitud.', 'error');
+    });
+  </script>
+</body>
+</html>

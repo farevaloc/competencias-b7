@@ -1,0 +1,48 @@
+/* Estilos para el módulo de administración de asignaturas */
+.asignaturas-seccion {
+  margin: var(--espaciado-l) 0;
+}
+
+.asignaturas-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+  margin-bottom: var(--espaciado-xl);
+}
+
+.asignaturas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--espaciado-l);
+}
+
+.tarjeta-asignatura {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.asignatura-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+  margin-bottom: var(--espaciado-l);
+}
+
+.asignatura-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  flex-wrap: wrap;
+}
+
+.asignatura-acciones {
+  display: flex;
+  gap: var(--espaciado-s);
+  justify-content: flex-end;
+  border-top: 1px solid var(--borde);
+  padding-top: var(--espaciado-m);
+}

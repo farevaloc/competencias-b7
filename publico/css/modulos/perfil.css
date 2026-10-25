@@ -1,0 +1,60 @@
+/* Estilos para el módulo de perfil */
+.perfil-contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-l);
+  max-width: 720px;
+  margin: var(--espaciado-l) auto;
+}
+
+.perfil-tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  padding: var(--espaciado-xl);
+  box-shadow: var(--sombra-1);
+}
+
+.perfil-tarjeta h2 {
+  font-size: var(--tamano-l);
+  color: var(--primario);
+  margin-bottom: var(--espaciado-m);
+  border-bottom: 2px solid var(--fondo);
+  padding-bottom: var(--espaciado-xs);
+}
+
+.perfil-avatar-seccion {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-l);
+  margin-bottom: var(--espaciado-l);
+}
+
+.perfil-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radio-completo);
+  object-fit: cover;
+  border: 3px solid var(--primario);
+  background-color: var(--fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  flex-shrink: 0;
+}
+
+.perfil-avatar-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+}
+
+@media (max-width: 600px) {
+  .perfil-avatar-seccion {
+    flex-direction: column;
+    text-align: center;
+  }
+}

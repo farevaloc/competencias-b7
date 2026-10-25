@@ -1,0 +1,107 @@
+/* Estilos para el módulo editor de contenidos */
+.editor-seccion {
+  margin: var(--espaciado-l) 0;
+}
+
+.editor-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+  margin-bottom: var(--espaciado-l);
+}
+
+.editor-selector-asignatura {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 540px;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaciado-l);
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .editor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-columna {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-m);
+}
+
+.panel-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaciado-s);
+  border-bottom: 2px solid var(--fondo);
+  padding-bottom: var(--espaciado-s);
+}
+
+.panel-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+}
+
+.item-tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.item-tarjeta--seleccionado {
+  border-color: var(--acento);
+  box-shadow: var(--sombra-2);
+  background-color: var(--superficie);
+  border-left-width: 4px;
+}
+
+.item-tarjeta--oculto {
+  opacity: 0.65;
+  border-style: dashed;
+}
+
+.item-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--espaciado-s);
+  cursor: pointer;
+}
+
+.item-titulo {
+  font-size: var(--tamano-m);
+  font-weight: var(--peso-seminegrita);
+  color: var(--primario);
+}
+
+.item-acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  flex-wrap: wrap;
+  border-top: 1px solid var(--borde);
+  padding-top: var(--espaciado-xs);
+}
+
+.btn-orden {
+  padding: 2px var(--espaciado-xs);
+  font-size: var(--tamano-xs);
+}

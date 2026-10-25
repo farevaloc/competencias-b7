@@ -1,0 +1,55 @@
+/* Estilos para el módulo de registro */
+.registro-seccion {
+  max-width: 480px;
+  margin: var(--espaciado-l) auto;
+}
+
+.registro-tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  padding: var(--espaciado-xl);
+  box-shadow: var(--sombra-2);
+}
+
+.registro-encabezado {
+  text-align: center;
+  margin-bottom: var(--espaciado-l);
+}
+
+.registro-encabezado h1 {
+  font-size: var(--tamano-xl);
+  color: var(--primario);
+  margin-bottom: var(--espaciado-xs);
+}
+
+.registro-encabezado p {
+  color: var(--texto-suave);
+  font-size: var(--tamano-s);
+}
+
+.campo--casilla {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--espaciado-s);
+}
+
+.campo--casilla input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.campo--casilla label {
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-regular);
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.registro-pie {
+  margin-top: var(--espaciado-l);
+  text-align: center;
+  font-size: var(--tamano-s);
+  color: var(--texto-suave);
+}

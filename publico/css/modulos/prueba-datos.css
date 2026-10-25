@@ -1,0 +1,25 @@
+/* Estilos específicos del módulo prueba-datos */
+.prueba-formulario {
+  margin-bottom: var(--espaciado-xl);
+}
+
+.prueba-registros {
+  margin-top: var(--espaciado-l);
+}
+
+.prueba-registro__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaciado-s) var(--espaciado-m);
+  border-bottom: 1px solid var(--borde);
+}
+
+.prueba-registro__item:last-child {
+  border-bottom: none;
+}
+
+.prueba-registro__meta {
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+}

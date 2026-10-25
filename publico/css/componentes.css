@@ -1,0 +1,677 @@
+/* ==========================================================================
+   publico/css/componentes.css · Biblioteca de componentes del ecosistema
+   Todos los estilos utilizan variables de tokens.css
+   ========================================================================== */
+
+/* 1. Botones (.btn) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaciado-s);
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-negrita);
+  padding: var(--espaciado-s) var(--espaciado-m);
+  border-radius: var(--radio-m);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion), transform var(--transicion);
+  white-space: nowrap;
+  line-height: var(--interlineado-compacto);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primario,
+.btn-primario {
+  background-color: var(--primario);
+  color: var(--texto-inverso);
+  border-color: var(--primario);
+}
+
+.btn--primario:hover,
+.btn-primario:hover {
+  background-color: var(--secundario);
+  border-color: var(--secundario);
+  text-decoration: none;
+  color: var(--texto-inverso);
+}
+
+.btn--secundario,
+.btn-secundario {
+  background-color: var(--superficie);
+  color: var(--primario);
+  border-color: var(--borde);
+}
+
+.btn--secundario:hover,
+.btn-secundario:hover {
+  background-color: var(--fondo);
+  border-color: var(--primario);
+  text-decoration: none;
+  color: var(--primario);
+}
+
+.btn--peligro {
+  background-color: var(--error);
+  color: var(--texto-inverso);
+  border-color: var(--error);
+}
+
+.btn--peligro:hover {
+  background-color: var(--primario-oscuro);
+  border-color: var(--primario-oscuro);
+  text-decoration: none;
+  color: var(--texto-inverso);
+}
+
+.btn--texto {
+  background-color: transparent;
+  color: var(--info);
+  border-color: transparent;
+  padding-left: var(--espaciado-xs);
+  padding-right: var(--espaciado-xs);
+}
+
+.btn--texto:hover {
+  text-decoration: underline;
+  color: var(--primario);
+}
+
+.btn--pequeno {
+  padding: var(--espaciado-xs) var(--espaciado-s);
+  font-size: var(--tamano-xs);
+  border-radius: var(--radio-s);
+}
+
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Variante de acento para acciones destacadas (contraste AA asegurado con texto azul primario) */
+.btn--acento {
+  background-color: var(--acento);
+  color: var(--primario);
+  border-color: var(--acento);
+}
+
+.btn--acento:hover {
+  background-color: var(--advertencia);
+  border-color: var(--advertencia);
+  color: var(--texto-inverso);
+  text-decoration: none;
+}
+
+/* 2. Tarjetas (.tarjeta) */
+.tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  padding: var(--espaciado-l);
+  box-shadow: var(--sombra-1);
+  transition: box-shadow var(--transicion);
+}
+
+.tarjeta:hover {
+  box-shadow: var(--sombra-2);
+}
+
+.tarjeta--destacada {
+  border-top: 4px solid var(--acento);
+}
+
+/* 3. Formularios y campos (.campo) */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+  margin-bottom: var(--espaciado-m);
+}
+
+.campo label {
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--primario);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: var(--espaciado-s) var(--espaciado-m);
+  font-size: var(--tamano-m);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  background-color: var(--superficie);
+  color: var(--texto);
+  transition: border-color var(--transicion);
+}
+
+.campo textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: var(--interlineado-base);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--info);
+  outline: 3px solid var(--anillo-foco);
+  outline-offset: 1px;
+}
+
+.campo input:disabled,
+.campo select:disabled,
+.campo textarea:disabled {
+  background-color: var(--fondo);
+  color: var(--texto-suave);
+  cursor: not-allowed;
+}
+
+.campo__error {
+  font-size: var(--tamano-xs);
+  color: var(--error);
+  font-weight: var(--peso-medio);
+}
+
+/* 4. Alertas (.alerta) */
+.alerta {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaciado-s);
+  padding: var(--espaciado-m);
+  border-radius: var(--radio-m);
+  border: 1px solid var(--borde);
+  border-left-width: 4px;
+  font-size: var(--tamano-s);
+  background-color: var(--superficie);
+  color: var(--texto);
+  line-height: var(--interlineado-base);
+}
+
+.alerta--info {
+  border-left-color: var(--info);
+}
+
+.alerta--exito {
+  border-left-color: var(--exito);
+}
+
+.alerta--advertencia {
+  border-left-color: var(--advertencia);
+}
+
+.alerta--error {
+  border-left-color: var(--error);
+}
+
+/* 5. Tablas (.tabla con desplazamiento responsivo) */
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  background-color: var(--superficie);
+  margin-bottom: var(--espaciado-m);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--tamano-s);
+}
+
+.tabla th,
+.tabla td {
+  padding: var(--espaciado-s) var(--espaciado-m);
+  border-bottom: 1px solid var(--borde);
+  vertical-align: middle;
+}
+
+.tabla th {
+  background-color: var(--fondo);
+  color: var(--primario);
+  font-weight: var(--peso-negrita);
+  white-space: nowrap;
+}
+
+.tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla tbody tr:hover {
+  background-color: var(--fondo);
+}
+
+@media (max-width: 768px) {
+  .tabla {
+    min-width: 500px;
+  }
+}
+
+/* 6. Modales (.modal) */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 46, 69, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--espaciado-m);
+}
+
+.modal {
+  background-color: var(--superficie);
+  border-radius: var(--radio-l);
+  box-shadow: var(--sombra-3);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--borde);
+}
+
+.modal-cabecera {
+  padding: var(--espaciado-m) var(--espaciado-l);
+  border-bottom: 1px solid var(--borde);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-titulo {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  margin: 0;
+}
+
+.modal-cuerpo {
+  padding: var(--espaciado-l);
+  font-size: var(--tamano-m);
+  color: var(--texto);
+  flex: 1;
+  line-height: var(--interlineado-base);
+}
+
+.modal-pie {
+  padding: var(--espaciado-m) var(--espaciado-l);
+  border-top: 1px solid var(--borde);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--espaciado-s);
+  background-color: var(--fondo);
+  border-bottom-left-radius: var(--radio-l);
+  border-bottom-right-radius: var(--radio-l);
+}
+
+/* 7. Toasts y Avisos (.toast, .aviso) */
+.contenedor-avisos {
+  position: fixed;
+  bottom: var(--espaciado-l);
+  right: var(--espaciado-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+  z-index: 2000;
+  max-width: min(calc(100% - var(--espaciado-xl)), 380px);
+}
+
+.toast,
+.aviso {
+  background-color: var(--primario-oscuro);
+  color: var(--texto-inverso);
+  padding: var(--espaciado-s) var(--espaciado-m);
+  border-radius: var(--radio-m);
+  box-shadow: var(--sombra-2);
+  font-size: var(--tamano-s);
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  border-left: 4px solid var(--info);
+  animation: aparecerToast var(--transicion);
+}
+
+.aviso-exito,
+.toast--exito {
+  border-left-color: var(--exito);
+}
+
+.aviso-advertencia,
+.toast--advertencia {
+  border-left-color: var(--advertencia);
+}
+
+.aviso-error,
+.toast--error {
+  border-left-color: var(--error);
+}
+
+.aviso-info,
+.toast--info {
+  border-left-color: var(--info);
+}
+
+@keyframes aparecerToast {
+  from {
+    opacity: 0;
+    transform: translateY(var(--espaciado-m));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 8. Insignias (.insignia) */
+.insignia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaciado-xs);
+  padding: var(--espaciado-xs) var(--espaciado-s);
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  border-radius: var(--radio-completo);
+  background-color: var(--secundario);
+  color: var(--texto-inverso);
+  border: 1px solid var(--secundario);
+  line-height: 1;
+}
+
+.insignia--acento {
+  background-color: var(--acento);
+  color: var(--primario);
+  border-color: var(--acento);
+}
+
+.insignia--exito {
+  background-color: var(--exito);
+  color: var(--texto-inverso);
+  border-color: var(--exito);
+}
+
+/* 9. Barra de progreso (.progreso) */
+.progreso {
+  width: 100%;
+  height: var(--espaciado-s);
+  background-color: var(--borde);
+  border-radius: var(--radio-completo);
+  overflow: hidden;
+  display: flex;
+}
+
+.progreso-barra,
+.progreso > span {
+  height: 100%;
+  background-color: var(--acento);
+  border-radius: var(--radio-completo);
+  transition: width var(--transicion);
+}
+
+.progreso--primario > span,
+.progreso-barra--primario {
+  background-color: var(--primario);
+}
+
+/* 10. Chips (.chip) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  padding: var(--espaciado-xs) var(--espaciado-s);
+  background-color: var(--superficie-suave);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-s);
+  font-size: var(--tamano-xs);
+  color: var(--primario);
+  font-weight: var(--peso-medio);
+  line-height: 1.2;
+}
+
+/* 11. Encabezado (.encabezado) */
+.encabezado {
+  background-color: var(--primario);
+  color: var(--texto-inverso);
+  padding: var(--espaciado-s) var(--espaciado-m);
+  border-bottom: 3px solid var(--acento);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--sombra-1);
+}
+
+.encabezado a {
+  color: var(--texto-inverso);
+}
+
+.encabezado a:hover {
+  color: var(--acento);
+}
+
+.encabezado__logo {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-extranegrita);
+  color: var(--texto-inverso);
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+}
+
+.encabezado__acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+}
+
+/* 12. Menú lateral plegable (.menu) */
+.menu {
+  width: 260px;
+  background-color: var(--primario-oscuro);
+  color: var(--texto-inverso);
+  display: flex;
+  flex-direction: column;
+  padding: var(--espaciado-m);
+  gap: var(--espaciado-xs);
+  min-height: 100vh;
+  border-right: 1px solid var(--secundario);
+}
+
+.menu__titulo {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--borde);
+  margin-top: var(--espaciado-m);
+  margin-bottom: var(--espaciado-xs);
+  padding: 0 var(--espaciado-s);
+}
+
+.menu a,
+.menu button {
+  color: var(--borde);
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  padding: var(--espaciado-s) var(--espaciado-m);
+  border-radius: var(--radio-m);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: background-color var(--transicion), color var(--transicion);
+  width: 100%;
+  text-align: left;
+}
+
+.menu a:hover,
+.menu button:hover,
+.menu a.activo,
+.menu a[aria-current="page"] {
+  background-color: var(--secundario);
+  color: var(--texto-inverso);
+  border-left: 3px solid var(--acento);
+}
+
+.menu-alternar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100vh;
+    z-index: 100;
+    transition: left var(--transicion);
+    box-shadow: var(--sombra-3);
+  }
+
+  .menu.abierto,
+  .menu.mostrar {
+    left: 0;
+  }
+
+  .menu-alternar {
+    display: inline-flex;
+  }
+
+  .menu-fondo {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 46, 69, 0.6);
+    z-index: 95;
+  }
+}
+
+/* 13. Pie de página (.pie) */
+.pie {
+  background-color: var(--primario-oscuro);
+  color: var(--borde);
+  padding: var(--espaciado-xl) var(--espaciado-m);
+  margin-top: auto;
+  border-top: 4px solid var(--acento);
+  text-align: center;
+  font-size: var(--tamano-s);
+}
+
+.pie a {
+  color: var(--texto-inverso);
+  text-decoration: underline;
+}
+
+/* 14. Indicador de carga (.cargando) */
+.cargando {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--borde);
+  border-top-color: var(--acento);
+  border-radius: var(--radio-completo);
+  animation: girar 0.8s linear infinite;
+  margin: var(--espaciado-m) auto;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 15. Estado vacío sin datos (.vacio) */
+.vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--espaciado-2xl) var(--espaciado-l);
+  background-color: var(--superficie);
+  border: 2px dashed var(--borde);
+  border-radius: var(--radio-l);
+  color: var(--texto-suave);
+  gap: var(--espaciado-s);
+}
+
+.vacio__icono {
+  font-size: var(--tamano-3xl);
+  color: var(--texto-suave);
+  line-height: 1;
+}
+
+.vacio__titulo {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  margin: 0;
+}
+
+.vacio__texto {
+  font-size: var(--tamano-s);
+  max-width: 420px;
+  margin: 0;
+}
+
+/* 16. Migas de pan (.migas) */
+.migas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-xs);
+  font-size: var(--tamano-s);
+  margin-bottom: var(--espaciado-m);
+}
+
+.migas ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-xs);
+}
+
+.migas li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  color: var(--texto-suave);
+}
+
+.migas a {
+  color: var(--info);
+  text-decoration: none;
+}
+
+.migas a:hover {
+  text-decoration: underline;
+}
+
+.migas__separador {
+  color: var(--borde-fuerte);
+  user-select: none;
+}
+
+.migas__actual {
+  color: var(--primario);
+  font-weight: var(--peso-seminegrita);
+}
+

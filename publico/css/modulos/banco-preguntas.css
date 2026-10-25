@@ -1,0 +1,285 @@
+/* ==========================================================================
+   publico/css/modulos/banco-preguntas.css
+   Estilos específicos para el Banco de preguntas
+   ========================================================================== */
+
+.banco-cabecera {
+  margin-bottom: var(--espaciado-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-m);
+}
+
+.banco-cabecera__fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+}
+
+.banco-cabecera__titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  margin: 0;
+}
+
+.banco-selector-tema {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+}
+
+.banco-selector-tema label {
+  font-weight: var(--peso-seminegrita);
+  font-size: var(--tamano-s);
+  color: var(--primario);
+}
+
+.banco-pestanas {
+  display: flex;
+  gap: var(--espaciado-xs);
+  overflow-x: auto;
+  border-bottom: 2px solid var(--borde);
+  padding-bottom: var(--espaciado-xs);
+  margin-bottom: var(--espaciado-m);
+}
+
+.banco-pestana {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  padding: var(--espaciado-s) var(--espaciado-m);
+  border: 1px solid transparent;
+  border-radius: var(--radio-m) var(--radio-m) 0 0;
+  background-color: transparent;
+  color: var(--texto-suave);
+  font-weight: var(--peso-medio);
+  font-size: var(--tamano-s);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transicion);
+}
+
+.banco-pestana:hover {
+  color: var(--primario);
+  background-color: var(--fondo);
+}
+
+.banco-pestana--activa {
+  background-color: var(--superficie);
+  color: var(--primario);
+  border-color: var(--borde) var(--borde) var(--superficie);
+  border-bottom: 2px solid var(--primario);
+  font-weight: var(--peso-negrita);
+}
+
+.banco-pestana__contador {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: var(--tamano-xs);
+  border-radius: var(--radio-pildora);
+  background-color: var(--fondo);
+  color: var(--texto-suave);
+  font-weight: var(--peso-negrita);
+}
+
+.banco-pestana--activa .banco-pestana__contador {
+  background-color: var(--primario);
+  color: var(--texto-inverso);
+}
+
+.banco-aviso-aprobadas {
+  margin-bottom: var(--espaciado-m);
+  border-left: 4px solid var(--advertencia);
+  background-color: var(--superficie);
+  padding: var(--espaciado-m);
+  border-radius: 0 var(--radio-m) var(--radio-m) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  font-size: var(--tamano-s);
+  color: var(--texto);
+}
+
+.banco-barra-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-s);
+  margin-bottom: var(--espaciado-m);
+}
+
+.banco-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-m);
+}
+
+.tarjeta-pregunta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+  transition: box-shadow var(--transicion);
+}
+
+.tarjeta-pregunta:hover {
+  box-shadow: var(--sombra-s);
+}
+
+.tarjeta-pregunta__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  flex-wrap: wrap;
+}
+
+.tarjeta-pregunta__enunciado {
+  font-size: var(--tamano-m);
+  font-weight: var(--peso-seminegrita);
+  color: var(--texto);
+  line-height: var(--interlineado-base);
+  margin: 0;
+}
+
+.tarjeta-pregunta__opciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+  margin-top: var(--espaciado-xs);
+  padding-left: var(--espaciado-m);
+  list-style: none;
+}
+
+.tarjeta-pregunta__opcion {
+  font-size: var(--tamano-s);
+  color: var(--texto-suave);
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+}
+
+.tarjeta-pregunta__opcion--correcta {
+  color: var(--exito);
+  font-weight: var(--peso-seminegrita);
+}
+
+.tarjeta-pregunta__retro {
+  background-color: var(--fondo);
+  border-radius: var(--radio-s);
+  padding: var(--espaciado-xs) var(--espaciado-s);
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+  font-style: italic;
+}
+
+.tarjeta-pregunta__pie {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  margin-top: var(--espaciado-xs);
+  border-top: 1px solid var(--borde);
+  padding-top: var(--espaciado-s);
+}
+
+/* Badges / Etiquetas */
+.etiqueta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  border-radius: var(--radio-pildora);
+}
+
+.etiqueta-badge--opcion {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.etiqueta-badge--vf {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.etiqueta-badge--completar {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
+
+.etiqueta-badge--aprobado {
+  background-color: #dcfce7;
+  color: var(--exito);
+}
+
+.etiqueta-badge--borrador {
+  background-color: #fee2e2;
+  color: var(--error);
+}
+
+.etiqueta-badge--origen {
+  background-color: var(--fondo);
+  color: var(--texto-suave);
+  border: 1px solid var(--borde);
+}
+
+/* Formulario en modal */
+.form-pregunta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-m);
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: var(--espaciado-xs);
+}
+
+.form-pregunta__opciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+}
+
+.form-pregunta__opcion-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+}
+
+/* Propuestas de IA */
+.propuesta-tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-m);
+  margin-bottom: var(--espaciado-m);
+}
+
+.propuesta-tarjeta__acciones {
+  display: flex;
+  gap: var(--espaciado-xs);
+  justify-content: flex-end;
+  margin-top: var(--espaciado-s);
+}
+
+@media (max-width: 600px) {
+  .banco-cabecera__fila {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .banco-barra-acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

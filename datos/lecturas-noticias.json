@@ -1,0 +1,20 @@
+[
+  {
+    "noticiaId": "not_000001",
+    "usuarioId": "usu_000004",
+    "id": "lec_000001",
+    "fecha": "2026-10-25T13:36:16.750Z"
+  },
+  {
+    "noticiaId": "not_000003",
+    "usuarioId": "usu_000002",
+    "id": "lec_000002",
+    "fecha": "2026-10-25T13:45:36.393Z"
+  },
+  {
+    "noticiaId": "not_000003",
+    "usuarioId": "usu_000004",
+    "id": "lec_000003",
+    "fecha": "2026-10-25T13:46:06.880Z"
+  }
+]

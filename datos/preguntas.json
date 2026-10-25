@@ -1,0 +1,492 @@
+[
+  {
+    "tipo": "opcion",
+    "enunciado": "¿Qué relación se establece entre el diseño de misiones con insignias y la verificación de las competencias adquiridas en el nivel de análisis?",
+    "opciones": [
+      "Las insignias actúan como hitos que demuestran la superación de desafíos estructurados por niveles de dominio.",
+      "Las misiones reemplazan completamente los objetivos de aprendizaje tradicionales por premios externos.",
+      "Las insignias se otorgan de manera aleatoria sin evaluar el rendimiento académico del estudiante.",
+      "Las misiones sirven únicamente para acumular puntos sin relación con el pensamiento crítico."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Las insignias funcionan como logros que acreditan la superación de metas vinculadas a una competencia clave dentro de la progresión del curso.",
+    "temaId": "tem_000002",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000001",
+    "fecha": "2026-10-25T15:26:31.997Z"
+  },
+  {
+    "tipo": "completar",
+    "enunciado": "La secuencia estructurada de desafíos con un propósito de aprendizaje concreto se denomina ____.",
+    "correcta": "mision",
+    "retroalimentacion": "Una misión constituye un conjunto organizado de retos diseñados para guiar al estudiante hacia el desarrollo de competencias específicas.",
+    "temaId": "tem_000002",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "opciones": [],
+    "id": "pre_000002",
+    "fecha": "2026-10-25T15:26:34.012Z"
+  },
+  {
+    "tipo": "opcion",
+    "enunciado": "Al examinar los errores frecuentes en la gamificación aplicada a la evaluación, ¿cuál de las siguientes prácticas desvirtúa el proceso de análisis formativo?",
+    "opciones": [
+      "Vincular cada insignia directamente con los objetivos de aprendizaje y niveles de dominio.",
+      "Sobrecargar de recompensas externas restando valor y sentido pedagógico al contenido.",
+      "Utilizar cuestionarios dinámicos que ofrecen retroalimentación inmediata sobre el desempeño.",
+      "Analizar datos cuantitativos para intervenir oportunamente ante las dificultades del estudiante."
+    ],
+    "correcta": 1,
+    "retroalimentacion": "Sobrecargar al estudiante con incentivos externos reduce la motivación intrínseca y desvía la atención del propósito de aprendizaje.",
+    "temaId": "tem_000002",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000003",
+    "fecha": "2026-10-25T15:26:36.029Z"
+  },
+  {
+    "tipo": "vf",
+    "enunciado": "Confundir la gamificación con premiar sin vincular los objetivos de aprendizaje es un error que favorece la correcta evaluación por competencias.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "Otorgar premios sin conexión con las metas pedagógicas constituye un error frecuente que obstaculiza una adecuada evaluación formativa.",
+    "temaId": "tem_000002",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000004",
+    "fecha": "2026-10-25T15:26:37.125Z"
+  },
+  {
+    "tipo": "vf",
+    "enunciado": "Analizar los datos de rendimiento obtenidos a través de cuestionarios dinámicos permite una intervención oportuna basada en la retroalimentación continua.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "El uso de herramientas gamificadas facilita la obtención de datos inmediatos para orientar al estudiante de forma constructiva.",
+    "temaId": "tem_000002",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000005",
+    "fecha": "2026-10-25T15:26:38.466Z"
+  },
+  {
+    "tipo": "opcion",
+    "enunciado": "Según el contenido, ¿qué efecto principal produce la aplicación de dinámicas de juego en contextos pedagógicos?",
+    "opciones": [
+      "Disminuye la retención de conceptos clave.",
+      "Incrementa la motivación intrínseca y permite una retroalimentación continua.",
+      "Reemplaza por completo la evaluación diagnóstica del curso.",
+      "Elimina la necesidad de establecer objetivos de aprendizaje."
+    ],
+    "correcta": 1,
+    "retroalimentacion": "La gamificación incrementa la motivación intrínseca y facilita una retroalimentación continua al aplicar dinámicas de juego en la pedagogía.",
+    "temaId": "tem_000002",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000006",
+    "fecha": "2026-10-25T15:28:21.860Z"
+  },
+  {
+    "tipo": "vf",
+    "enunciado": "Uno de los objetivos de la gamificación en la evaluación es analizar datos de rendimiento para lograr una intervención oportuna.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "El análisis de datos de rendimiento forma parte explícita de los objetivos para permitir intervenciones pedagógicas oportunas.",
+    "temaId": "tem_000002",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000007",
+    "fecha": "2026-10-25T15:28:21.867Z"
+  },
+  {
+    "tipo": "completar",
+    "enunciado": "La unidad cuantitativa de recompensa acumulada al superar desafíos o tareas académicas se denomina ____.",
+    "opciones": [
+      "Puntos"
+    ],
+    "correcta": "Puntos",
+    "retroalimentacion": "El glosario define los puntos como la unidad cuantitativa de recompensa acumulada tras superar desafíos o tareas.",
+    "temaId": "tem_000002",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000008",
+    "fecha": "2026-10-25T15:28:21.871Z"
+  },
+  {
+    "tipo": "opcion",
+    "enunciado": "¿Cuál se identifica como un error frecuente al implementar estrategias de gamificación educativa?",
+    "opciones": [
+      "Fomentar la retroalimentación inmediata en los cuestionarios.",
+      "Diseñar misiones estructuradas con propósitos concretos.",
+      "Confundir gamificación con premiar sin vincular objetivos de aprendizaje.",
+      "Analizar los datos de rendimiento para la intervención."
+    ],
+    "correcta": 2,
+    "retroalimentacion": "Confundir la gamificación con dar premios desconectados de los objetivos de aprendizaje es un error frecuente señalado en el contenido.",
+    "temaId": "tem_000002",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000009",
+    "fecha": "2026-10-25T15:28:21.875Z"
+  },
+  {
+    "tipo": "vf",
+    "enunciado": "Sobrecargar de recompensas externas a los estudiantes es una práctica recomendada que incrementa el valor intrínseco del contenido.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "El contenido señala que sobrecargar de recompensas externas es un error frecuente que resta valor al contenido, no que lo incrementa.",
+    "temaId": "tem_000002",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000010",
+    "fecha": "2026-10-25T15:28:21.877Z"
+  },
+  {
+    "id": "preg_test_001",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "vf",
+    "enunciado": "Pregunta de prueba 1 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 1",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_002",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "completar",
+    "enunciado": "Pregunta de prueba 2 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [],
+    "correcta": "respuesta correcta",
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 2",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_003",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "opcion",
+    "enunciado": "Pregunta de prueba 3 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Opción A",
+      "Opción B",
+      "Opción C",
+      "Opción D"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 3",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_004",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "vf",
+    "enunciado": "Pregunta de prueba 4 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 4",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_005",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "completar",
+    "enunciado": "Pregunta de prueba 5 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [],
+    "correcta": "respuesta correcta",
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 5",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_006",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "opcion",
+    "enunciado": "Pregunta de prueba 6 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Opción A",
+      "Opción B",
+      "Opción C",
+      "Opción D"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 6",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_007",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "vf",
+    "enunciado": "Pregunta de prueba 7 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 7",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_008",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "completar",
+    "enunciado": "Pregunta de prueba 8 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [],
+    "correcta": "respuesta correcta",
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 8",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_009",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "opcion",
+    "enunciado": "Pregunta de prueba 9 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Opción A",
+      "Opción B",
+      "Opción C",
+      "Opción D"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 9",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_010",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "vf",
+    "enunciado": "Pregunta de prueba 10 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 10",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_011",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "completar",
+    "enunciado": "Pregunta de prueba 11 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [],
+    "correcta": "respuesta correcta",
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 11",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_012",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "tipo": "opcion",
+    "enunciado": "Pregunta de prueba 12 sobre Entornos Virtuales y Plataformas de Aprendizaje?",
+    "opciones": [
+      "Opción A",
+      "Opción B",
+      "Opción C",
+      "Opción D"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Retroalimentación explicativa para pregunta 12",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_001",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 1?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 1",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_002",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 2?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 2",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_003",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 3?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 3",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_004",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 4?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 4",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_005",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 5?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 5",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_006",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 6?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 6",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_007",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 7?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 7",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_008",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 8?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 8",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_009",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 9?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 9",
+    "origen": "docente",
+    "estado": "aprobado"
+  },
+  {
+    "id": "preg_test_n2_010",
+    "temaId": "tem_000001",
+    "nivel": 2,
+    "tipo": "vf",
+    "enunciado": "Pregunta Nivel 2 10?",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Retro Nivel 2 10",
+    "origen": "docente",
+    "estado": "aprobado"
+  }
+]

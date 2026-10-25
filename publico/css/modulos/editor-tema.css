@@ -1,0 +1,105 @@
+/* Estilos para el módulo editor de ficha de tema y glosario */
+.editor-tema-seccion {
+  margin: var(--espaciado-l) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xl);
+}
+
+.tema-cabecera-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+}
+
+.tema-bloque-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--espaciado-l);
+}
+
+@media (max-width: 840px) {
+  .tema-bloque-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contador-palabras {
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+  margin-top: var(--espaciado-xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contador-palabras--optimo {
+  color: var(--exito);
+  font-weight: var(--peso-seminegrita);
+}
+
+.lista-dinamica {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+  margin-bottom: var(--espaciado-m);
+}
+
+.lista-dinamica-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  background-color: var(--fondo);
+  padding: var(--espaciado-xs) var(--espaciado-s);
+  border-radius: var(--radio-s);
+  border: 1px solid var(--borde);
+}
+
+.lista-dinamica-item span {
+  flex: 1;
+  font-size: var(--tamano-s);
+  word-break: break-word;
+}
+
+.recurso-fila {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr auto auto;
+  gap: var(--espaciado-s);
+  align-items: center;
+  background-color: var(--fondo);
+  padding: var(--espaciado-s);
+  border-radius: var(--radio-m);
+  border: 1px solid var(--borde);
+}
+
+@media (max-width: 768px) {
+  .recurso-fila {
+    grid-template-columns: 1fr;
+  }
+}
+
+.glosario-metricas {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-m);
+  flex-wrap: wrap;
+  margin-bottom: var(--espaciado-m);
+  padding: var(--espaciado-m);
+  background-color: var(--fondo);
+  border-radius: var(--radio-m);
+  border: 1px solid var(--borde);
+}
+
+.insignia--apto {
+  background-color: var(--exito);
+  color: var(--texto-inverso);
+  font-weight: var(--peso-negrita);
+}
+
+.insignia--pendiente {
+  background-color: var(--advertencia);
+  color: var(--texto);
+  font-weight: var(--peso-medio);
+}

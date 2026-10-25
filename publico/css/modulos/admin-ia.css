@@ -1,0 +1,87 @@
+/* ==========================================================================
+   publico/css/modulos/admin-ia.css
+   Estilos para el módulo de configuración de IA (administrador)
+   ========================================================================== */
+
+.admin-ia-tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-xl);
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: var(--sombra-s);
+}
+
+.admin-ia-tarjeta__titulo {
+  font-size: var(--tamano-xl);
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  margin-bottom: var(--espaciado-xs);
+}
+
+.admin-ia-tarjeta__desc {
+  font-size: var(--tamano-s);
+  color: var(--texto-suave);
+  margin-bottom: var(--espaciado-l);
+  line-height: var(--interlineado-base);
+}
+
+.admin-ia-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-m);
+}
+
+.admin-ia-estado {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  padding: var(--espaciado-m);
+  border-radius: var(--radio-s);
+  background-color: var(--fondo);
+  font-size: var(--tamano-s);
+  border: 1px solid var(--borde);
+  margin-bottom: var(--espaciado-s);
+}
+
+.admin-ia-estado--activo {
+  border-left: 4px solid var(--exito);
+}
+
+.admin-ia-estado--inactivo {
+  border-left: 4px solid var(--advertencia);
+}
+
+.admin-ia-acciones {
+  display: flex;
+  gap: var(--espaciado-s);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: var(--espaciado-m);
+  padding-top: var(--espaciado-m);
+  border-top: 1px solid var(--borde);
+}
+
+.admin-ia-resultado-prueba {
+  margin-top: var(--espaciado-m);
+  padding: var(--espaciado-m);
+  border-radius: var(--radio-s);
+  font-size: var(--tamano-s);
+  line-height: var(--interlineado-base);
+  display: none;
+}
+
+.admin-ia-resultado-prueba--exito {
+  display: block;
+  background-color: #dcfce7;
+  color: var(--exito);
+  border: 1px solid #86efac;
+}
+
+.admin-ia-resultado-prueba--error {
+  display: block;
+  background-color: #fee2e2;
+  color: var(--error);
+  border: 1px solid #fca5a5;
+}

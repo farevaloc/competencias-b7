@@ -1,0 +1,24 @@
+[
+  {
+    "titulo": "El ritmo de la tecnología",
+    "temaId": "tem_000001",
+    "audio": "/recursos/subidas/ejemplo.mp3",
+    "letra": "Aprender con código y pasión\nConstruyendo una solución",
+    "lrc": "[00:02.00] Aprender con código y pasión\n[00:06.50] Construyendo una solución",
+    "autoria": "Docente Demo",
+    "licencia": "CC BY",
+    "id": "can_000001",
+    "fecha": "2026-10-25T13:52:11.552Z"
+  },
+  {
+    "titulo": "Del Prompt al Aprendizaje",
+    "temaId": "tem_000001",
+    "audio": "/recursos/subidas/4616b96e35107f4ad4925549fd1e3779.mp3",
+    "letra": "No aplica",
+    "lrc": "",
+    "autoria": "Felipe Arévalo",
+    "licencia": "CC BY",
+    "id": "can_000002",
+    "fecha": "2026-10-25T13:54:41.554Z"
+  }
+]

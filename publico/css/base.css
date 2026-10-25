@@ -1,0 +1,243 @@
+/* ==========================================================================
+   publico/css/base.css · Reset ligero, tipografía, enlaces y utilidades base
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--tamano-m);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-m);
+  line-height: var(--interlineado-base);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas:
+    "encabezado encabezado"
+    "menu contenido"
+    "pie pie";
+}
+
+body:not(:has(.menu)) {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "encabezado"
+    "contenido"
+    "pie";
+}
+
+#plantilla {
+  display: contents;
+}
+
+.encabezado {
+  grid-area: encabezado;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+#contenido {
+  grid-area: contenido;
+  padding-top: var(--espaciado-l);
+  padding-bottom: var(--espaciado-xl);
+  min-width: 0;
+}
+
+.pie {
+  grid-area: pie;
+}
+
+.encabezado__marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "encabezado"
+      "contenido"
+      "pie";
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    z-index: 100;
+    transition: left var(--transicion);
+    box-shadow: var(--sombra-3);
+  }
+
+  .menu.abierto {
+    left: 0;
+  }
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titulos);
+  color: var(--primario);
+  font-weight: var(--peso-negrita);
+  line-height: var(--interlineado-compacto);
+  margin-bottom: var(--espaciado-s);
+}
+
+h1 {
+  font-size: var(--tamano-3xl);
+  font-weight: var(--peso-extranegrita);
+}
+
+h2 {
+  font-size: var(--tamano-2xl);
+}
+
+h3 {
+  font-size: var(--tamano-xl);
+}
+
+h4 {
+  font-size: var(--tamano-l);
+}
+
+h5 {
+  font-size: var(--tamano-m);
+}
+
+h6 {
+  font-size: var(--tamano-s);
+}
+
+p {
+  margin-bottom: var(--espaciado-m);
+}
+
+small {
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+}
+
+strong, b {
+  font-weight: var(--peso-negrita);
+}
+
+code, kbd, samp, pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: var(--tamano-s);
+}
+
+pre {
+  background-color: var(--primario-oscuro);
+  color: var(--borde);
+  padding: var(--espaciado-m);
+  border-radius: var(--radio-m);
+  overflow-x: auto;
+  margin-bottom: var(--espaciado-m);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--borde);
+  margin: var(--espaciado-l) 0;
+}
+
+/* Enlaces */
+a {
+  color: var(--info);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primario);
+}
+
+/* Foco visible */
+:focus-visible {
+  outline: 3px solid var(--anillo-foco);
+  outline-offset: 2px;
+}
+
+/* Disposición estructural */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--espaciado-m);
+  padding-right: var(--espaciado-m);
+}
+
+.pila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-m);
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+  align-items: center;
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--espaciado-m);
+}
+
+/* Accesibilidad y visibilidad */
+.oculto {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

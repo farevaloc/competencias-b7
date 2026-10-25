@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Colores */
+  --primario: #002e45;
+  --primario-oscuro: #1c3247;
+  --secundario: #264763;
+  --acento: #ff6900;
+  --exito: #1d6540;
+  --advertencia: #993d00;
+  --error: #b22222;
+  --info: #14648e;
+  --fondo: #f5f7f8;
+  --superficie: #ffffff;
+  --borde: #dfe7ec;
+  --texto: #182d3e;
+  --texto-suave: #4e6375;
+  --texto-inverso: #ffffff;
+
+  /* Colores con prefijo alternativo para compatibilidad */
+  --color-primario: var(--primario);
+  --color-primario-oscuro: var(--primario-oscuro);
+  --color-secundario: var(--secundario);
+  --color-acento: var(--acento);
+  --color-exito: var(--exito);
+  --color-advertencia: var(--advertencia);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-fondo: var(--fondo);
+  --color-superficie: var(--superficie);
+  --color-borde: var(--borde);
+  --color-texto: var(--texto);
+  --color-texto-suave: var(--texto-suave);
+  --color-texto-inverso: var(--texto-inverso);
+
+  /* Superficie suave y foco */
+  --superficie-suave: #eef3f6; /* PROVISIONAL */
+  --anillo-foco: #1470a8; /* PROVISIONAL */
+
+  /* Tipografía */
+  --fuente-base: 'Poppins', Arial, sans-serif;
+  --fuente-titulos: 'Poppins', Arial, sans-serif;
+
+  /* Tamaños de tipografía (xs a 3xl) */
+  --tamano-xs: 0.75rem;    /* 12px */
+  --tamano-s: 0.875rem;    /* 14px */
+  --tamano-m: 1rem;        /* 16px */
+  --tamano-l: 1.25rem;     /* 20px */
+  --tamano-xl: 1.5rem;     /* 24px */
+  --tamano-2xl: 2rem;      /* 32px */
+  --tamano-3xl: 2.5rem;    /* 40px */
+
+  /* Pesos */
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-seminegrita: 600;
+  --peso-negrita: 700;
+  --peso-extranegrita: 800;
+
+  /* Interlineado */
+  --interlineado-compacto: 1.2;
+  --interlineado-base: 1.6;
+  --interlineado-amplio: 1.7;
+
+  /* Espaciados (xs a 2xl) */
+  --espaciado-xs: 0.25rem; /* 4px */
+  --espaciado-s: 0.5rem;   /* 8px */
+  --espaciado-m: 1rem;     /* 16px */
+  --espaciado-l: 1.5rem;   /* 24px */
+  --espaciado-xl: 2rem;    /* 32px */
+  --espaciado-2xl: 3rem;   /* 48px */
+
+  /* Radios (s, m, l, completo) */
+  --radio-s: 4px;
+  --radio-m: 8px;
+  --radio-l: 12px;
+  --radio-completo: 9999px;
+
+  /* Sombras (1 a 3) */
+  --sombra-1: 0 1px 3px rgba(0, 46, 69, 0.08);
+  --sombra-2: 0 4px 12px rgba(0, 46, 69, 0.08);
+  --sombra-3: 0 16px 36px rgba(0, 46, 69, 0.12);
+
+  /* Transición y ancho máximo */
+  --transicion: 0.2s ease;
+  --ancho-maximo: 1200px;
+}

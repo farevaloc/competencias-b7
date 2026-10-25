@@ -1,0 +1,40 @@
+/* Estilos del módulo de privacidad */
+.privacidad-contenido {
+  max-width: var(--ancho-lectura);
+  margin: 0 auto;
+  padding: var(--espaciado-l) 0;
+}
+
+.privacidad-tarjeta {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  padding: var(--espaciado-xl);
+  box-shadow: var(--sombra-1);
+}
+
+.privacidad-seccion {
+  margin-top: var(--espaciado-l);
+}
+
+.privacidad-seccion h2 {
+  font-size: var(--tamano-l);
+  color: var(--primario);
+  margin-bottom: var(--espaciado-s);
+}
+
+.privacidad-seccion p,
+.privacidad-seccion ul {
+  font-size: var(--tamano-m);
+  color: var(--texto);
+  line-height: var(--interlineado-holgado);
+}
+
+.privacidad-seccion ul {
+  padding-left: var(--espaciado-l);
+  margin-top: var(--espaciado-xs);
+}
+
+.privacidad-seccion li {
+  margin-bottom: var(--espaciado-xs);
+}

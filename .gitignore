@@ -1,0 +1,11 @@
+node_modules/
+.env
+ecosistema-educativo.zip
+.DS_Store
+*/.DS_Store
+
+datos/respaldos/
+datos/mensajes/
+datos/*.jsonl
+datos/sesiones.json
+

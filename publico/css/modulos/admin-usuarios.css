@@ -1,0 +1,61 @@
+/* Estilos para el módulo de administración de usuarios */
+.admin-seccion {
+  margin: var(--espaciado-l) 0;
+}
+
+.admin-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+  margin-bottom: var(--espaciado-l);
+}
+
+.admin-filtros {
+  display: flex;
+  gap: var(--espaciado-m);
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-buscador {
+  flex: 1;
+  min-width: 240px;
+}
+
+.admin-filtro-rol {
+  width: 200px;
+}
+
+.usuario-info {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+}
+
+.usuario-avatar-pequeno {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radio-completo);
+  object-fit: cover;
+  background-color: var(--fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+  flex-shrink: 0;
+  border: 1px solid var(--borde);
+}
+
+.usuario-nombres {
+  display: flex;
+  flex-direction: column;
+}
+
+.usuario-correo {
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+}

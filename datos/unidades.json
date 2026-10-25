@@ -1,0 +1,18 @@
+[
+  {
+    "id": "uni_000001",
+    "asignaturaId": "asi_000001",
+    "titulo": "Unidad 1: Fundamentos y Estrategias Tecnoeducativas",
+    "orden": 1,
+    "visible": true,
+    "fecha": "2026-10-24T12:00:00.000Z"
+  },
+  {
+    "asignaturaId": "asi_000002",
+    "titulo": "Números enteros",
+    "orden": 1,
+    "visible": true,
+    "id": "uni_000002",
+    "fecha": "2026-10-24T17:17:05.461Z"
+  }
+]

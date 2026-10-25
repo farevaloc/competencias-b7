@@ -1,0 +1,89 @@
+/* Estilos para el módulo Mis asignaturas */
+.asignaturas-seccion {
+  margin: var(--espaciado-l) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-l);
+}
+
+.asignaturas-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+}
+
+.asignaturas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--espaciado-l);
+}
+
+.tarjeta-asignatura {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--espaciado-m);
+  height: 100%;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+  border: 1px solid var(--borde);
+}
+
+.tarjeta-asignatura:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-m);
+  border-color: var(--primario);
+}
+
+.tarjeta-asignatura__cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--espaciado-s);
+}
+
+.tarjeta-asignatura__titulo {
+  font-size: var(--tamano-l);
+  color: var(--primario);
+  margin: 0;
+  line-height: var(--interlineado-compacto);
+}
+
+.tarjeta-asignatura__descripcion {
+  font-size: var(--tamano-s);
+  color: var(--texto-suave);
+  margin: var(--espaciado-xs) 0 0 0;
+  line-height: var(--interlineado-base);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tarjeta-asignatura__avance {
+  margin-top: auto;
+  padding-top: var(--espaciado-s);
+  border-top: 1px solid var(--borde);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+}
+
+.tarjeta-asignatura__avance-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+}
+
+.tarjeta-asignatura__porcentaje {
+  font-weight: var(--peso-negrita);
+  color: var(--primario);
+}
+
+.tarjeta-asignatura__pie {
+  display: flex;
+  justify-content: flex-end;
+}

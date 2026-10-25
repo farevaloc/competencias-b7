@@ -1,0 +1,44 @@
+/* Estilos para el módulo de distributivo */
+.distributivo-seccion {
+  margin: var(--espaciado-l) 0;
+}
+
+.distributivo-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-m);
+  margin-bottom: var(--espaciado-l);
+}
+
+.estudiantes-seleccion-lista {
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-m);
+  padding: var(--espaciado-s);
+  background-color: var(--fondo);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-xs);
+}
+
+.estudiante-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-s);
+  padding: var(--espaciado-xs) var(--espaciado-s);
+  border-radius: var(--radio-s);
+  background-color: var(--superficie);
+  cursor: pointer;
+  font-size: var(--tamano-s);
+}
+
+.estudiante-item:hover {
+  background-color: var(--fondo);
+}
+
+.estudiante-item input[type="checkbox"] {
+  cursor: pointer;
+}

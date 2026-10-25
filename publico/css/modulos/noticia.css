@@ -1,0 +1,94 @@
+/* Estilos para el detalle de la noticia */
+.noticia-detalle-seccion {
+  margin: var(--espaciado-l) 0 var(--espaciado-2xl) 0;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-l);
+}
+
+.noticia-articulo {
+  background-color: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-l);
+  padding: var(--espaciado-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-l);
+}
+
+@media (max-width: 600px) {
+  .noticia-articulo {
+    padding: var(--espaciado-m);
+  }
+}
+
+.noticia-articulo__cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-s);
+  border-bottom: 1px solid var(--borde);
+  padding-bottom: var(--espaciado-m);
+}
+
+.noticia-articulo__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-s);
+  font-size: var(--tamano-xs);
+  color: var(--texto-suave);
+}
+
+.noticia-articulo__titulo {
+  font-size: var(--tamano-2xl);
+  color: var(--primario);
+  margin: 0;
+  line-height: var(--interlineado-compacto);
+}
+
+.noticia-articulo__imagen {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radio-m);
+  border: 1px solid var(--borde);
+}
+
+.noticia-articulo__resumen-destacado {
+  font-size: var(--tamano-m);
+  color: var(--primario-oscuro);
+  background-color: var(--fondo);
+  border-left: 4px solid var(--primario);
+  padding: var(--espaciado-m);
+  border-radius: var(--radio-s);
+  line-height: var(--interlineado-base);
+  font-weight: var(--peso-medio);
+}
+
+.noticia-articulo__cuerpo {
+  font-size: var(--tamano-base);
+  line-height: var(--interlineado-amplio);
+  color: var(--texto);
+}
+
+.noticia-articulo__cuerpo p {
+  margin-bottom: var(--espaciado-m);
+}
+
+.noticia-articulo__cuerpo p:last-child {
+  margin-bottom: 0;
+}
+
+.noticia-articulo__pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--borde);
+  padding-top: var(--espaciado-m);
+  margin-top: var(--espaciado-m);
+  flex-wrap: wrap;
+  gap: var(--espaciado-s);
+}

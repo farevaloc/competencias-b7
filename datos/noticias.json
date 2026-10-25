@@ -1,0 +1,40 @@
+[
+  {
+    "titulo": "Nueva plataforma de aprendizaje",
+    "resumen": "Se han incorporado nuevas herramientas de inteligencia artificial y gamificación.",
+    "cuerpo": "Estamos felices de presentar las *nuevas herramientas* para el ciclo académico.",
+    "categoria": "Institucional",
+    "destacada": true,
+    "estado": "publicado",
+    "autorId": "usu_000002",
+    "fechaPublicacion": "2026-10-25T13:36:16.660Z",
+    "id": "not_000001",
+    "fecha": "2026-10-25T13:36:16.660Z"
+  },
+  {
+    "titulo": "Borrador de anuncio",
+    "resumen": "Este es un borrador en preparación.",
+    "cuerpo": "Contenido pendiente de aprobación.",
+    "categoria": "Académica",
+    "destacada": false,
+    "estado": "borrador",
+    "autorId": "usu_000002",
+    "fechaPublicacion": null,
+    "id": "not_000002",
+    "fecha": "2026-10-25T13:36:16.663Z"
+  },
+  {
+    "titulo": "Competencias Digitales News",
+    "resumen": "Las competencias digitales del docente en la educación virtual son el conjunto de conocimientos, habilidades y actitudes necesarias para integrar la tecnología de forma pedagógica, más allá del simple",
+    "cuerpo": "Marcos de referencia principales\n• DigCompEdu (Unión Europea): Define áreas clave como el compromiso profesional, la selección y creación de recursos digitales, la conducción de la enseñanza y el aprendizaje, la evaluación formativa, el empoderamiento del alumnado y el desarrollo de la competencia digital en los estudiantes.\n• Marco de la UNESCO: Enfocado en cómo los docentes acceden, comprenden, intercambian y crean información de manera prudente y ética para guiar los procesos educativo",
+    "imagen": "https://www.colombiaaprende.edu.co/sites/default/files/files_public/imagenes_agenda/shutterstock_1043756827.png",
+    "categoria": "Académica",
+    "temaId": "tem_000001",
+    "destacada": true,
+    "estado": "publicado",
+    "autorId": "usu_000002",
+    "fechaPublicacion": "2026-10-25T13:45:35.678Z",
+    "id": "not_000003",
+    "fecha": "2026-10-25T13:45:35.679Z"
+  }
+]
