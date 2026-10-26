@@ -193,6 +193,14 @@ async function renderizarConSesion() {
             </div>
           </a>
 
+          <a href="/paginas/banco-preguntas.html" class="tarjeta-acceso">
+            <span class="tarjeta-acceso__icono">🎯</span>
+            <div class="tarjeta-acceso__texto">
+              <span class="tarjeta-acceso__titulo">Cuestionarios y Quizzes</span>
+              <span class="tarjeta-acceso__desc">Crear y generar preguntas con IA</span>
+            </div>
+          </a>
+
           ${usuario.rol === 'admin' ? `
             <a href="/paginas/distributivo.html" class="tarjeta-acceso">
               <span class="tarjeta-acceso__icono">👥</span>
@@ -328,11 +336,37 @@ async function renderizarConSesion() {
     `;
   }
 
+  // Bloque de Quizzes y Cuestionarios para Estudiantes
+  let bloqueQuizHtml = '';
+  if (!esDocenteOAdmin) {
+    bloqueQuizHtml = `
+      <section class="inicio-seccion-bloque" aria-labelledby="titulo-quiz-inicio">
+        <div class="tarjeta" style="background: linear-gradient(135deg, var(--superficie), var(--fondo-suave)); border-left: 4px solid var(--primario); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--espaciado-m); padding: var(--espaciado-l);">
+          <div style="display: flex; align-items: center; gap: var(--espaciado-m);">
+            <span style="font-size: var(--tamano-3xl);" aria-hidden="true">🎯</span>
+            <div>
+              <h2 id="titulo-quiz-inicio" style="margin: 0; font-size: var(--tamano-l); color: var(--primario);">
+                Cuestionarios y Quizzes por niveles
+              </h2>
+              <p style="margin: 4px 0 0 0; font-size: var(--tamano-s); color: var(--texto-suave);">
+                Supera los 5 niveles cognitivos de Bloom en tus asignaturas y gana diplomas acreditados.
+              </p>
+            </div>
+          </div>
+          <a href="/paginas/quiz.html" class="btn btn--primario">
+            Rendir Quiz ahora →
+          </a>
+        </div>
+      </section>
+    `;
+  }
+
   contenedor.innerHTML = `
     <div class="inicio-seccion">
       ${saludoHtml}
       ${continuarHtml}
       ${accesosRapidosHtml}
+      ${bloqueQuizHtml}
       ${bloqueAsignaturasHtml}
       ${noticiasBloqueHtml}
     </div>

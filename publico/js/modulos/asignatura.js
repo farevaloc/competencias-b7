@@ -2,6 +2,7 @@ import { montarPlantilla } from '../nucleo/plantilla.js';
 import * as api from '../nucleo/api.js';
 import * as ui from '../nucleo/ui.js';
 import * as util from '../nucleo/util.js';
+import * as sesion from '../nucleo/sesion.js';
 
 await montarPlantilla({ titulo: 'Asignatura', roles: ['estudiante', 'docente', 'admin'] });
 
@@ -77,6 +78,36 @@ async function cargarAsignatura() {
           temasListaHtml = temasDeUnidad.map((tema, idxTema) => {
             const revisado = temasRevisadosIds.has(tema.id);
             const numeroTema = `${idxUnidad + 1}.${idxTema + 1}`;
+            const usuarioSesion = sesion.usuarioActual();
+            const esDocente = usuarioSesion && (usuarioSesion.rol === 'docente' || usuarioSesion.rol === 'admin');
+
+            let botonesAcciones = '';
+            if (esDocente) {
+              botonesAcciones = `
+                <a href="/paginas/banco-preguntas.html?temaId=${encodeURIComponent(tema.id)}" class="btn btn--primario btn--pequeno" title="Crear o editar preguntas y cuestionarios para este tema">
+                  📝 Gestionar Quiz
+                </a>
+                <a href="/paginas/quiz.html?temaId=${encodeURIComponent(tema.id)}" class="btn btn--secundario btn--pequeno" title="Probar el Quiz como estudiante">
+                  👁️ Probar
+                </a>
+                <a href="/paginas/tema.html?id=${encodeURIComponent(tema.id)}" class="btn btn--texto btn--pequeno">
+                  Estudiar
+                </a>
+              `;
+            } else {
+              botonesAcciones = `
+                ${revisado
+                  ? `<span class="insignia insignia--revisado">Revisado ✓</span>`
+                  : `<span class="insignia insignia--pendiente">Pendiente</span>`
+                }
+                <a href="/paginas/quiz.html?temaId=${encodeURIComponent(tema.id)}" class="btn btn--primario btn--pequeno" title="Rendir el Quiz por niveles de este tema">
+                  🎯 Iniciar Quiz
+                </a>
+                <a href="/paginas/tema.html?id=${encodeURIComponent(tema.id)}" class="btn btn--secundario btn--pequeno">
+                  Estudiar
+                </a>
+              `;
+            }
 
             return `
               <li class="tema-item">
@@ -91,13 +122,7 @@ async function cargarAsignatura() {
                 </div>
 
                 <div class="tema-item__acciones">
-                  ${revisado
-                    ? `<span class="insignia insignia--revisado">Revisado ✓</span>`
-                    : `<span class="insignia insignia--pendiente">Pendiente</span>`
-                  }
-                  <a href="/paginas/tema.html?id=${encodeURIComponent(tema.id)}" class="btn btn--secundario btn--pequeno">
-                    Estudiar
-                  </a>
+                  ${botonesAcciones}
                 </div>
               </li>
             `;
@@ -259,6 +284,35 @@ async function cargarAsignatura() {
           <span>🏛️</span>
           <span>Tutor Socrático</span>
         </button>
+
+        <!-- Tarjeta de Quiz y Cuestionarios -->
+        <section class="tarjeta" style="background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio-l); padding: var(--espaciado-l); box-shadow: var(--sombra-1);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--espaciado-m);">
+            <div style="display: flex; align-items: center; gap: var(--espaciado-m);">
+              <div style="font-size: var(--tamano-2xl); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--superficie-suave); border-radius: var(--radio-completo);" aria-hidden="true">🎯</div>
+              <div>
+                <h2 style="font-size: var(--tamano-m); color: var(--primario); margin: 0; font-weight: var(--peso-negrita);">
+                  Cuestionarios y Quiz por Niveles
+                </h2>
+                <p style="font-size: var(--tamano-s); color: var(--texto-suave); margin: 2px 0 0 0;">
+                  ${sesion.usuarioActual() && (sesion.usuarioActual().rol === 'docente' || sesion.usuarioActual().rol === 'admin')
+                    ? 'Crea, genera con IA y administra los cuestionarios de cada tema para evaluar a los estudiantes.'
+                    : 'Avanza a través de los 5 niveles cognitivos de Bloom, gana puntos de gamificación y obtén diplomas.'}
+                </p>
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--espaciado-s); flex-wrap: wrap;">
+              ${sesion.usuarioActual() && (sesion.usuarioActual().rol === 'docente' || sesion.usuarioActual().rol === 'admin') ? `
+                <a href="/paginas/banco-preguntas.html" class="btn btn--primario">
+                  📝 Banco de Preguntas / Crear Quiz
+                </a>
+              ` : ''}
+              <a href="/paginas/quiz.html" class="btn btn--secundario">
+                🎯 Ir a Quiz
+              </a>
+            </div>
+          </div>
+        </section>
 
         <!-- Listado de unidades -->
         <div class="asignatura-unidades-lista">

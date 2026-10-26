@@ -2,6 +2,7 @@ import { montarPlantilla } from '../nucleo/plantilla.js';
 import * as api from '../nucleo/api.js';
 import * as ui from '../nucleo/ui.js';
 import * as util from '../nucleo/util.js';
+import * as sesion from '../nucleo/sesion.js';
 import { ACTIVIDADES } from '../nucleo/catalogo-actividades.js';
 
 await montarPlantilla({ titulo: 'Tema', roles: ['estudiante', 'docente', 'admin'] });
@@ -192,7 +193,19 @@ function renderizarVistaTema({ tema, unidad, asignatura, revisado }) {
             <h1 class="tema-titulo">${ui.escapar(tema.titulo)}</h1>
           </div>
 
-          <div style="flex-shrink: 0;">
+          <div style="flex-shrink: 0; display: flex; gap: var(--espaciado-s); align-items: center; flex-wrap: wrap;">
+            ${sesion.usuarioActual() && (sesion.usuarioActual().rol === 'docente' || sesion.usuarioActual().rol === 'admin') ? `
+              <a href="/paginas/banco-preguntas.html?temaId=${encodeURIComponent(tema.id)}" class="btn btn--primario" title="Gestionar preguntas del Quiz">
+                📝 Gestionar Quiz
+              </a>
+              <a href="/paginas/quiz.html?temaId=${encodeURIComponent(tema.id)}" class="btn btn--secundario" title="Probar el Quiz como estudiante">
+                👁️ Probar Quiz
+              </a>
+            ` : `
+              <a href="/paginas/quiz.html?temaId=${encodeURIComponent(tema.id)}" class="btn btn--secundario" title="Rendir el Quiz de este tema">
+                🎯 Iniciar Quiz
+              </a>
+            `}
             ${revisado
               ? `<button type="button" class="btn btn--revisado" disabled>Revisado ✓</button>`
               : `<button type="button" class="btn btn--primario" id="btnMarcarRevisado">Marcar como revisado</button>`

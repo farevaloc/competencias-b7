@@ -22,6 +22,7 @@ Sprint terminado: S__ · Fecha: AAAA-MM-DD · Velocidad real: __ puntos
 - P08.1 · Banco de preguntas (preparador IA, permisos, ganchos, interfaz banco-preguntas y menú).
 - P08.2 · Motor del quiz en servidor (rutas /api/quiz/*, sesiones, respuestas, finalización, gamificación y permisos).
 - P08.3 · Página del quiz y diplomas por nivel (selector-tema, retroalimentación, gamificación, pdf diploma jsPDF y quiz.html).
+- P08.4 · Integración completa de Cuestionarios/Quizzes: acceso directo para estudiantes en inicio, asignatura y tema; gestor de creación y completado de quizzes con IA para docentes; cobertura de preguntas en todos los niveles de Bloom.
 - Tutor Virtual Socrático IA (servidor/prompts/tutor.txt, preparador tutor.js, ruta POST /api/ia/tutor, registro consultas-tutor, interfaz interactiva de chat con sugerencias y delimitación curricular en asignatura.html).
  
 ## Decisiones y cambios respecto a docs/contratos.md

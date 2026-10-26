@@ -488,5 +488,1301 @@
     "retroalimentacion": "Retro Nivel 2 10",
     "origen": "docente",
     "estado": "aprobado"
+  },
+  {
+    "id": "pre_000013",
+    "tipo": "opcion",
+    "enunciado": "Al configurar un aula virtual modular, ¿qué acción práctica asegura la mediación asincrónica efectiva entre docentes y estudiantes?",
+    "opciones": [
+      "Habilitar foros de discusión guiados con preguntas detonantes y retroalimentación periódica.",
+      "Subir únicamente archivos PDF para que el estudiante los descargue de manera autónoma.",
+      "Desactivar las notificaciones para no saturar los correos electrónicos.",
+      "Reemplazar todas las tareas por clases en vivo sin registro de grabación."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Los foros guiados con preguntas dinamizadoras garantizan una interacción asincrónica reflexiva y continua.",
+    "temaId": "tem_000001",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.765Z"
+  },
+  {
+    "id": "pre_000014",
+    "tipo": "vf",
+    "enunciado": "Configurar rúbricas automáticas dentro de una tarea en el LMS permite estandarizar los criterios de evaluación y agilizar la retroalimentación formativa.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Las rúbricas en el LMS clarifican las expectativas y brindan retroalimentación objetiva a los alumnos.",
+    "temaId": "tem_000001",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000015",
+    "tipo": "completar",
+    "enunciado": "La herramienta del LMS diseñada para el intercambio estructurado y diferido de opiniones sobre un tema se denomina ____.",
+    "opciones": [],
+    "correcta": "foro",
+    "retroalimentacion": "El foro es la herramienta asincrónica por excelencia para el diálogo formativo.",
+    "temaId": "tem_000001",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000016",
+    "tipo": "opcion",
+    "enunciado": "Si un docente desea diseñar una secuencia didáctica digital integrada, ¿cuál debe ser el primer paso en la plataforma?",
+    "opciones": [
+      "Definir los objetivos de aprendizaje y articular los recursos con las actividades de entrega.",
+      "Publicar un examen final antes de cargar los materiales de estudio.",
+      "Limitar el acceso a los estudiantes hasta el último día del curso.",
+      "Eliminar los foros para evitar preguntas de los participantes."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Toda secuencia didáctica inicia articulando objetivos claros con recursos y actividades formativas.",
+    "temaId": "tem_000001",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000017",
+    "tipo": "vf",
+    "enunciado": "Limitar el aula virtual a ser un repositorio estático de documentos PDF es una buena práctica de diseño tecnoeducativo.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "Considerar el aula solo como repositorio de archivos es uno de los errores más comunes; debe ser un espacio de interacción.",
+    "temaId": "tem_000001",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000018",
+    "tipo": "opcion",
+    "enunciado": "Al analizar la arquitectura de un LMS, ¿qué diferencia esencial existe entre la interacción sincrónica y la asincrónica?",
+    "opciones": [
+      "La interacción sincrónica ocurre en tiempo real y la asincrónica en tiempos diferidos según el ritmo del estudiante.",
+      "La interacción sincrónica no requiere internet mientras que la asincrónica sí.",
+      "La interacción asincrónica excluye el uso de textos escritos en la plataforma.",
+      "No existe ninguna diferencia pedagógica entre ambas modalidades."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "La sincronicidad implica coincidencia temporal simultánea, mientras que la asincronicidad permite flexibilidad temporal.",
+    "temaId": "tem_000001",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000019",
+    "tipo": "vf",
+    "enunciado": "Analizar las métricas de participación en el LMS (frecuencia de acceso, entregas y clics) permite detectar precozmente el riesgo de deserción o rezago.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "El análisis de analíticas de aprendizaje en el LMS faculta una intervención docente oportuna.",
+    "temaId": "tem_000001",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000020",
+    "tipo": "completar",
+    "enunciado": "El sistema de gestión de aprendizaje que centraliza cursos, usuarios y recursos virtuales se conoce por sus siglas en inglés como ____.",
+    "opciones": [],
+    "correcta": "LMS",
+    "retroalimentacion": "LMS corresponde a Learning Management System (Sistema de Gestión del Aprendizaje).",
+    "temaId": "tem_000001",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000021",
+    "tipo": "opcion",
+    "enunciado": "¿Por qué la ausencia de canales de retroalimentación bidireccional en un entorno virtual perjudica el rendimiento estudiantil?",
+    "opciones": [
+      "Porque impide al estudiante reorientar sus errores y debilita el sentido de pertenencia a la comunidad de aprendizaje.",
+      "Porque incrementa innecesariamente el tiempo de estudio independiente.",
+      "Porque obliga al docente a calificar de manera presencial.",
+      "Porque bloquea automáticamente el acceso a la plataforma."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Sin retroalimentación oportuna, el estudiante se aísla y no tiene pautas para autorregular su aprendizaje.",
+    "temaId": "tem_000001",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000022",
+    "tipo": "vf",
+    "enunciado": "Un entorno virtual de aprendizaje eficaz reemplaza completamente la necesidad de mediación pedagógica por parte del docente.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "La tecnología no reemplaza la mediación docente; transforma y amplía las formas de acompañamiento y facilitación.",
+    "temaId": "tem_000001",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000023",
+    "tipo": "opcion",
+    "enunciado": "¿Qué criterio es el más determinante para evaluar si un aula virtual cumple con los estándares tecnoeducativos contemporáneos?",
+    "opciones": [
+      "La coherencia entre las competencias a desarrollar, la interactividad de las actividades y la claridad evaluativa.",
+      "La cantidad total de archivos PDF pesados disponibles para descargar.",
+      "El número de colores y adornos gráficos sin función pedagógica en la interfaz.",
+      "Que todo el contenido sea exclusivamente en formato de video sin actividades prácticas."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "La calidad de un aula virtual se mide por la alineación constructiva entre competencias, interactividad y evaluación.",
+    "temaId": "tem_000001",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000024",
+    "tipo": "vf",
+    "enunciado": "Evaluar la accesibilidad y la usabilidad de una plataforma LMS es indispensable para garantizar la equidad en el acceso al aprendizaje.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "La usabilidad y la accesibilidad aseguran que todos los estudiantes puedan participar sin barreras tecnológicas.",
+    "temaId": "tem_000001",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000025",
+    "tipo": "completar",
+    "enunciado": "El proceso continuo de recolección de evidencias para retroalimentar y mejorar el aprendizaje se denomina evaluación ____.",
+    "opciones": [],
+    "correcta": "formativa",
+    "retroalimentacion": "La evaluación formativa se enfoca en el acompañamiento y mejora continua durante el proceso formativo.",
+    "temaId": "tem_000001",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000026",
+    "tipo": "opcion",
+    "enunciado": "Al valorar dos plataformas LMS para una institución educativa, ¿cuál de los siguientes aspectos garantiza la sostenibilidad a largo plazo?",
+    "opciones": [
+      "La interoperabilidad con estándares abiertos, la seguridad de datos y la capacidad de integración.",
+      "Que sea una plataforma propietaria cerrada que no permita exportar las calificaciones.",
+      "Que no requiera contraseñas ni autenticación de usuarios.",
+      "Que limite los cursos a un solo tema por periodo académico."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "La interoperabilidad y el cumplimiento de estándares garantizan la portabilidad y sostenibilidad del ecosistema digital.",
+    "temaId": "tem_000001",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000027",
+    "tipo": "vf",
+    "enunciado": "Para una evaluación justa en entornos virtuales, los criterios y rúbricas deben publicarse antes de que los estudiantes inicien sus tareas.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "La transparencia en los criterios de evaluación fomenta la autorregulación y la justicia formativa.",
+    "temaId": "tem_000001",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000028",
+    "tipo": "opcion",
+    "enunciado": "¿Cuál es el significado pedagógico del concepto de gamificación en el ámbito formativo?",
+    "opciones": [
+      "La integración intencionada de mecánicas de juego en contextos educativos para potenciar el compromiso y la motivación.",
+      "Jugar videojuegos de entretenimiento durante las horas de clase sin vinculación curricular.",
+      "Eliminar los contenidos académicos y sustituirlos por competencias recreativas.",
+      "Obligar a los estudiantes a apostar puntos para aprobar una materia."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "La gamificación traslada las dinámicas de juego a situaciones de aprendizaje para motivar y facilitar el aprendizaje.",
+    "temaId": "tem_000002",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000029",
+    "tipo": "vf",
+    "enunciado": "En la gamificación educativa, las insignias digitales representan exclusivamente un premio decorativo sin valor curricular.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "Las insignias acreditan hitos y dominios de competencias específicas dentro del itinerario formativo.",
+    "temaId": "tem_000002",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000030",
+    "tipo": "completar",
+    "enunciado": "La motivación que surge del interés genuino, la curiosidad y la satisfacción interna por aprender se denomina motivación ____.",
+    "opciones": [],
+    "correcta": "intrinseca",
+    "retroalimentacion": "La motivación intrínseca es impulsada por el deseo interno de autorrealización y dominio de conocimientos.",
+    "temaId": "tem_000002",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000031",
+    "tipo": "opcion",
+    "enunciado": "¿Por qué la retroalimentación inmediata en los cuestionarios gamificados favorece la evaluación formativa?",
+    "opciones": [
+      "Porque permite al alumno identificar aciertos y errores en el momento exacto en que razona sobre la pregunta.",
+      "Porque evita que el docente tenga que planificar las clases presenciales.",
+      "Porque asigna siempre la máxima puntuación a todos los estudiantes de forma indiscriminada.",
+      "Porque elimina la necesidad de repasar los contenidos del tema."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "El feedback oportuno e inmediato cierra la brecha entre el error y la comprensión correcta del concepto.",
+    "temaId": "tem_000002",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000032",
+    "tipo": "vf",
+    "enunciado": "La evaluación formativa tiene como finalidad principal calificar con notas sancionatorias al final del semestre escolar.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "La evaluación formativa acompaña el proceso para orientar y mejorar el desempeño, a diferencia de la sumativa final.",
+    "temaId": "tem_000002",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000033",
+    "tipo": "opcion",
+    "enunciado": "Al implementar un sistema de misiones con insignias en un curso virtual, ¿cómo se asegura su efectividad pedagógica?",
+    "opciones": [
+      "Asociando cada misión a una competencia concreta y requiriendo la evidencia de su aplicación práctica.",
+      "Entregando todas las insignias al inicio del curso sin requerir ninguna entrega.",
+      "Ocultando los criterios de logro para generar incertidumbre en los estudiantes.",
+      "Premiando exclusivamente la velocidad de conexión en la plataforma."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Las misiones deben ligarse a competencias medibles para que las recompensas reflejen logros pedagógicos reales.",
+    "temaId": "tem_000002",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000034",
+    "tipo": "vf",
+    "enunciado": "Diseñar niveles progresivos de dificultad en un quiz gamificado permite al estudiante avanzar a su propio ritmo según su dominio.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "La progresión por niveles escalonados mantiene el estado de flujo y el reto cognitivo adecuado.",
+    "temaId": "tem_000002",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000035",
+    "tipo": "completar",
+    "enunciado": "El documento digital o gráfico que certifica la superación exitosa de un nivel de evaluación se denomina ____.",
+    "opciones": [],
+    "correcta": "diploma",
+    "retroalimentacion": "El diploma acredita formalmente el logro alcanzado en el nivel de evaluación.",
+    "temaId": "tem_000002",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000036",
+    "tipo": "opcion",
+    "enunciado": "¿Cómo debe actuar un docente cuando los datos de rendimiento de un cuestionario muestran que un 60% de los estudiantes falló en un concepto clave?",
+    "opciones": [
+      "Diseñar una actividad de refuerzo socrático y aclarar el concepto antes de avanzar al siguiente nivel.",
+      "Sancionar a los estudiantes y continuar con el siguiente tema sin revisar el error.",
+      "Eliminar la pregunta del examen para fingir que todos aprobaron.",
+      "Repetir el mismo examen sin brindar ninguna retroalimentación."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "La evaluación formativa exige usar los datos analíticos para retroalimentar e intervenir oportunamente.",
+    "temaId": "tem_000002",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000037",
+    "tipo": "vf",
+    "enunciado": "La retroalimentación en un quiz gamificado debe orientar al estudiante explicando por qué la opción es correcta o incorrecta.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Una buena retroalimentación formativa explica el razonamiento y guía el aprendizaje futuro.",
+    "temaId": "tem_000002",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000038",
+    "tipo": "opcion",
+    "enunciado": "Al evaluar el impacto de una estrategia gamificada, ¿cuál es el indicador definitivo de que fue pedagógicamente exitosa?",
+    "opciones": [
+      "La transferencia y aplicación efectiva de los conocimientos adquiridos a situaciones complejas de la vida real.",
+      "Que los estudiantes únicamente compitieran por sumar puntos sin reflexionar sobre los contenidos.",
+      "Que nadie haya cometido errores durante toda la asignatura.",
+      "El número de horas acumuladas de conexión pasiva en la plataforma."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "El éxito pedagógico de la gamificación se evidencia en la transferencia y comprensión profunda del aprendizaje.",
+    "temaId": "tem_000002",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000039",
+    "tipo": "vf",
+    "enunciado": "Sobrecargar un aula virtual con recompensas externas y tablas de posiciones agresivas puede desmotivar a los estudiantes con menor ritmo inicial.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "El exceso de competencia externa puede perjudicar la autoestima académica y desviar el foco del aprendizaje intrínseco.",
+    "temaId": "tem_000002",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000040",
+    "tipo": "completar",
+    "enunciado": "El marco taxonómico que clasifica los objetivos educativos desde recordar hasta evaluar se conoce como Taxonomía de ____.",
+    "opciones": [],
+    "correcta": "Bloom",
+    "retroalimentacion": "La Taxonomía de Bloom estructura los niveles de dominio cognitivo en el aprendizaje.",
+    "temaId": "tem_000002",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000041",
+    "tipo": "opcion",
+    "enunciado": "¿Qué ventaja formativa ofrece el método socrático en la retroalimentación de un error durante la evaluación?",
+    "opciones": [
+      "Estimula la autorreflexión y el pensamiento crítico al invitar al estudiante a descubrir la contradicción por sí mismo.",
+      "Le proporciona la respuesta de memoria para que no tenga que pensar.",
+      "Aplica una penalización de puntos sin explicar la causa del fallo.",
+      "Bloquea la sesión de estudio de manera permanente."
+    ],
+    "correcta": 0,
+    "retroalimentacion": "El enfoque socrático no impone la respuesta: formula preguntas que guían el razonamiento del estudiante.",
+    "temaId": "tem_000002",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000042",
+    "tipo": "vf",
+    "enunciado": "La gamificación bien diseñada fomenta la perseverancia académica al permitir que el error sea visto como una oportunidad de aprendizaje.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "En los entornos lúdicos el error es parte natural del avance y estimula la resiliencia y el reintento formativo.",
+    "temaId": "tem_000002",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:42:03.766Z"
+  },
+  {
+    "id": "pre_000043",
+    "tipo": "opcion",
+    "enunciado": "¿Cuál de los siguientes números es un número entero positivo?",
+    "opciones": [
+      "+7",
+      "-4",
+      "0",
+      "-12"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Los números enteros positivos son aquellos mayores que cero, identificados por el signo + o sin signo.",
+    "temaId": "tem_000003",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000044",
+    "tipo": "vf",
+    "enunciado": "En la recta numérica horizontal, los números enteros positivos se ubican a la derecha del número cero.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Por convención matemática universal, los números positivos avanzan hacia la derecha del origen cero.",
+    "temaId": "tem_000003",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000045",
+    "tipo": "completar",
+    "enunciado": "El signo que precede a un número entero positivo de forma explícita es el signo ____.",
+    "opciones": [],
+    "correcta": "mas",
+    "retroalimentacion": "El signo '+' (más) identifica a las cantidades positivas.",
+    "temaId": "tem_000003",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000046",
+    "tipo": "opcion",
+    "enunciado": "El conjunto de los enteros positivos coincide con el conjunto de los números:",
+    "opciones": [
+      "Naturales excluyendo el cero (1, 2, 3...)",
+      "Enteros negativos",
+      "Fraccionarios irreducibles",
+      "Decimales no periódicos"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Los números naturales mayores que cero (1, 2, 3...) son equivalentes a los enteros positivos.",
+    "temaId": "tem_000003",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000047",
+    "tipo": "vf",
+    "enunciado": "El número cero (0) es un número entero estrictamente positivo.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "El cero es un número neutro: no es ni positivo ni negativo, actúa como origen de la recta numérica.",
+    "temaId": "tem_000003",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000048",
+    "tipo": "opcion",
+    "enunciado": "Si la temperatura en Quito sube 15 grados centígrados, ¿cómo se representa esta variación?",
+    "opciones": [
+      "+15 °C",
+      "-15 °C",
+      "0 °C",
+      "-30 °C"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Los incrementos y aumentos se representan con números enteros positivos (+15).",
+    "temaId": "tem_000003",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000049",
+    "tipo": "vf",
+    "enunciado": "Un depósito o abono de dinero en una cuenta de ahorros se representa mediante un entero positivo.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Los ingresos y saldos a favor representan valores positivos en la contabilidad financiera.",
+    "temaId": "tem_000003",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000050",
+    "tipo": "completar",
+    "enunciado": "En la recta numérica horizontal, cuanto más a la derecha se ubica un entero positivo, ____ es su valor.",
+    "opciones": [],
+    "correcta": "mayor",
+    "retroalimentacion": "En la recta numérica, el orden es creciente hacia la derecha: a mayor distancia del cero a la derecha, mayor valor.",
+    "temaId": "tem_000003",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000051",
+    "tipo": "opcion",
+    "enunciado": "¿Por qué el número +8 es mayor que el número +3 en la recta numérica?",
+    "opciones": [
+      "Porque +8 se sitúa más a la derecha del origen cero que +3",
+      "Porque ambos números son múltiplos de dos",
+      "Porque el signo más invierte las magnitudes",
+      "Porque +3 se encuentra más lejos del cero"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Entre dos números positivos, el que está más alejado del cero a la derecha es el mayor.",
+    "temaId": "tem_000003",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000052",
+    "tipo": "vf",
+    "enunciado": "Expresar que el volcán Cotopaxi tiene 5897 metros sobre el nivel del mar corresponde al número entero +5897.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Las alturas y elevaciones sobre el nivel del mar se expresan con signo positivo.",
+    "temaId": "tem_000003",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000053",
+    "tipo": "opcion",
+    "enunciado": "Un comerciante obtuvo $120 de ganancia el lunes y $80 el martes. ¿Cuál es la operación que calcula su ganancia total?",
+    "opciones": [
+      "(+120) + (+80) = +200",
+      "(-120) + (+80) = -40",
+      "(+120) - (+80) = +40",
+      "(-120) + (-80) = -200"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Ambas cantidades representan ganancias, por lo que se suman como enteros positivos obteniendo +200.",
+    "temaId": "tem_000003",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000054",
+    "tipo": "completar",
+    "enunciado": "Si un ascensor se encuentra en el piso +2 y sube 3 pisos, llegará al piso número ____.",
+    "opciones": [],
+    "correcta": "5",
+    "retroalimentacion": "(+2) + (+3) = +5, llega al quinto piso.",
+    "temaId": "tem_000003",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000055",
+    "tipo": "vf",
+    "enunciado": "La suma de dos números enteros positivos siempre produce como resultado otro número entero positivo.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Por la ley de clausura de la suma en los enteros positivos, (+) + (+) = (+).",
+    "temaId": "tem_000003",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000056",
+    "tipo": "opcion",
+    "enunciado": "Un dron vuela a 25 metros de altitud y asciende 15 metros adicionales. ¿Cuál es su altitud final?",
+    "opciones": [
+      "+40 metros",
+      "+10 metros",
+      "-40 metros",
+      "+2515 metros"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "(+25) + (+15) = +40 metros.",
+    "temaId": "tem_000003",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000057",
+    "tipo": "vf",
+    "enunciado": "Al multiplicar (+6) por (+4), el producto resultante es igual a +24.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "El producto de factores con signos iguales positivos es siempre positivo.",
+    "temaId": "tem_000003",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000058",
+    "tipo": "opcion",
+    "enunciado": "¿Qué magnitud geométrica en la recta numérica define el valor absoluto de un entero positivo?",
+    "opciones": [
+      "La distancia euclidiana desde el número hasta el origen cero",
+      "La cantidad de números primos menores que él",
+      "El número de veces que puede dividirse por dos",
+      "El opuesto simétrico con signo invertido"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "El valor absoluto de cualquier número real o entero mide la distancia al cero en la recta numérica.",
+    "temaId": "tem_000003",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000059",
+    "tipo": "vf",
+    "enunciado": "El conjunto de los números enteros positivos es infinito y no posee un elemento máximo.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Siempre es posible sumar 1 a cualquier número positivo obteniendo un entero mayor.",
+    "temaId": "tem_000003",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000060",
+    "tipo": "completar",
+    "enunciado": "La distancia sin considerar el signo entre un entero y el cero se denomina valor ____.",
+    "opciones": [],
+    "correcta": "absoluto",
+    "retroalimentacion": "El valor absoluto |a| representa la distancia no negativa al origen.",
+    "temaId": "tem_000003",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000061",
+    "tipo": "opcion",
+    "enunciado": "Si a y b son dos enteros positivos tales que a > b, ¿qué se concluye sobre la diferencia (a - b)?",
+    "opciones": [
+      "(a - b) es estrictamente un número entero positivo",
+      "(a - b) es siempre igual a cero",
+      "(a - b) es un entero negativo",
+      "(a - b) no puede determinarse"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Si a es mayor que b, restar b de a deja un residuo positivo mayor que cero.",
+    "temaId": "tem_000003",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000062",
+    "tipo": "vf",
+    "enunciado": "Entre dos números enteros positivos consecutivos (como +4 y +5) no existe ningún otro número entero.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "El conjunto de los enteros es discreto: no hay enteros entre dos números consecutivos.",
+    "temaId": "tem_000003",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000063",
+    "tipo": "opcion",
+    "enunciado": "Un alumno sostiene: \"Cualquier entero positivo es mayor que cualquier entero negativo\". ¿Cómo se valora su afirmación?",
+    "opciones": [
+      "Es correcta, porque todo número a la derecha del cero es mayor que cualquier número a la izquierda",
+      "Es falsa, porque -100 tiene mayor valor absoluto que +2",
+      "Solo se cumple para números menores que diez",
+      "Es indeterminada en la recta real"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Cualquier positivo es mayor que cualquier negativo debido a su posición relativa en la recta numérica.",
+    "temaId": "tem_000003",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000064",
+    "tipo": "vf",
+    "enunciado": "Representar altitudes y ganancias exclusivamente con números enteros positivos es suficiente para modelar cualquier variación física o económica.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "Se requieren también los números negativos para modelar descensos, pérdidas y profundidades.",
+    "temaId": "tem_000003",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000065",
+    "tipo": "completar",
+    "enunciado": "La propiedad de cerradura afirma que la suma de enteros positivos siempre resulta en un entero ____.",
+    "opciones": [],
+    "correcta": "positivo",
+    "retroalimentacion": "El conjunto de los enteros positivos es cerrado bajo la adición.",
+    "temaId": "tem_000003",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000066",
+    "tipo": "opcion",
+    "enunciado": "¿Cuál es la principal ventaja pedagógica de asociar los números enteros positivos con la recta numérica?",
+    "opciones": [
+      "Facilita la comprensión espacial del orden, la distancia y la dirección de las cantidades",
+      "Elimina la necesidad de aprender las operaciones aritméticas básicas",
+      "Permite prescindir completamente del uso de calculadoras",
+      "Reemplaza los conceptos algebraicos formales"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "La recta numérica dota de sentido visual y geométrico al orden y magnitud de los números.",
+    "temaId": "tem_000003",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000067",
+    "tipo": "vf",
+    "enunciado": "En la evaluación por competencias, resolver problemas que contextualizan números positivos fomenta el razonamiento lógico-matemático.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Contextualizar las cantidades en situaciones reales fortalece el aprendizaje significativo y el pensamiento crítico.",
+    "temaId": "tem_000003",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:50:00.000Z"
+  },
+  {
+    "id": "pre_000068",
+    "tipo": "opcion",
+    "enunciado": "¿Cuál de los siguientes números representa un entero negativo?",
+    "opciones": [
+      "-15",
+      "+15",
+      "0",
+      "+1/2"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Los números enteros negativos van precedidos por el signo menos (-).",
+    "temaId": "tem_000004",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000069",
+    "tipo": "vf",
+    "enunciado": "En la recta numérica horizontal, los enteros negativos se encuentran a la izquierda del cero.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Los números negativos se disponen hacia la izquierda del origen cero.",
+    "temaId": "tem_000004",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000070",
+    "tipo": "completar",
+    "enunciado": "El signo matemático que identifica obligatoriamente a los números negativos es el signo ____.",
+    "opciones": [],
+    "correcta": "menos",
+    "retroalimentacion": "El signo '-' (menos) es indispensable para denotar una cantidad negativa.",
+    "temaId": "tem_000004",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000071",
+    "tipo": "opcion",
+    "enunciado": "¿Cuál es el opuesto del número entero positivo +9?",
+    "opciones": [
+      "-9",
+      "+9",
+      "0",
+      "+1/9"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "El opuesto de un entero positivo es el mismo número con signo negativo.",
+    "temaId": "tem_000004",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000072",
+    "tipo": "vf",
+    "enunciado": "El número entero negativo más cercano al cero es el -1.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "-1 es el mayor de todos los enteros negativos y el más próximo a cero.",
+    "temaId": "tem_000004",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000073",
+    "tipo": "opcion",
+    "enunciado": "Si un submarino desciende a 80 metros bajo el nivel del mar, ¿cómo se expresa su posición?",
+    "opciones": [
+      "-80 metros",
+      "+80 metros",
+      "0 metros",
+      "-1/80 metros"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Las profundidades bajo el nivel del mar se expresan con números negativos.",
+    "temaId": "tem_000004",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000074",
+    "tipo": "vf",
+    "enunciado": "Tener una deuda financiera de $50 dólares se representa como -50 en los registros contables.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Las deudas y pasivos se modelan mediante cantidades negativas.",
+    "temaId": "tem_000004",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000075",
+    "tipo": "completar",
+    "enunciado": "Al comparar dos enteros negativos, el número que está más cerca del cero es el ____.",
+    "opciones": [],
+    "correcta": "mayor",
+    "retroalimentacion": "En los negativos, cuanto más cerca del cero esté el número, mayor es su valor (ej. -2 > -10).",
+    "temaId": "tem_000004",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000076",
+    "tipo": "opcion",
+    "enunciado": "¿Cuál de las siguientes relaciones de orden entre números negativos es correcta?",
+    "opciones": [
+      "-3 > -8",
+      "-8 > -3",
+      "-10 > -1",
+      "-5 > 0"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "-3 está más a la derecha que -8 en la recta numérica, por tanto es mayor.",
+    "temaId": "tem_000004",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000077",
+    "tipo": "vf",
+    "enunciado": "Una temperatura de 6 grados bajo cero se representa como -6 °C.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Los valores térmicos inferiores al punto de congelación se denotan con signo negativo.",
+    "temaId": "tem_000004",
+    "nivel": 2,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000078",
+    "tipo": "opcion",
+    "enunciado": "Una persona tenía una deuda de $30 (-30) y contrae otra deuda de $20 (-20). ¿Cuál es su saldo total?",
+    "opciones": [
+      "(-30) + (-20) = -50",
+      "(-30) + (+20) = -10",
+      "(-30) - (-20) = -10",
+      "(+30) + (+20) = +50"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Sumar dos deudas equivale a sumar dos números negativos, dando -50.",
+    "temaId": "tem_000004",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000079",
+    "tipo": "completar",
+    "enunciado": "Si un ascensor baja desde la planta baja (0) tres pisos hacia el subsuelo, se ubicará en el piso ____.",
+    "opciones": [],
+    "correcta": "-3",
+    "retroalimentacion": "Los subsuelos se representan mediante enteros negativos: -3.",
+    "temaId": "tem_000004",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000080",
+    "tipo": "vf",
+    "enunciado": "Al multiplicar dos números enteros negativos, el resultado obtenido siempre es un número positivo.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Por la ley de signos de la multiplicación: (-) × (-) = (+).",
+    "temaId": "tem_000004",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000081",
+    "tipo": "opcion",
+    "enunciado": "La temperatura en el Chimborazo era de -2 °C y descendió 4 °C más. ¿Cuál es la temperatura final?",
+    "opciones": [
+      "-6 °C",
+      "+2 °C",
+      "-2 °C",
+      "+6 °C"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "(-2) - (+4) = -2 - 4 = -6 °C.",
+    "temaId": "tem_000004",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000082",
+    "tipo": "vf",
+    "enunciado": "La suma de un número con su opuesto simétrico (ej. +7 y -7) siempre es igual a cero.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Todo número sumado con su opuesto aditivo se anula dando el elemento neutro 0.",
+    "temaId": "tem_000004",
+    "nivel": 3,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000083",
+    "tipo": "opcion",
+    "enunciado": "Al calcular el valor absoluto de -12, ¿cuál es el resultado correcto y por qué?",
+    "opciones": [
+      "+12, porque representa la distancia al cero sin considerar la dirección",
+      "-12, porque el número original es negativo",
+      "0, porque los signos se anulan",
+      "-1/12, porque se calcula el inverso"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "|-12| = +12. El valor absoluto siempre es una cantidad positiva o cero.",
+    "temaId": "tem_000004",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000084",
+    "tipo": "vf",
+    "enunciado": "Si dos números negativos x e y cumplen que |x| > |y|, entonces x es menor que y (x < y).",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "El entero negativo con mayor valor absoluto está más alejado del cero a la izquierda, por lo que es menor.",
+    "temaId": "tem_000004",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000085",
+    "tipo": "completar",
+    "enunciado": "El mayor número entero negativo que existe es el número ____.",
+    "opciones": [],
+    "correcta": "-1",
+    "retroalimentacion": "-1 es el entero negativo más cercano al cero por la izquierda.",
+    "temaId": "tem_000004",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000086",
+    "tipo": "opcion",
+    "enunciado": "¿Qué ocurre con el signo del producto de tres números negativos: (-a) × (-b) × (-c)?",
+    "opciones": [
+      "El resultado siempre es negativo",
+      "El resultado siempre es positivo",
+      "El resultado es cero",
+      "El signo depende del valor absoluto"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Un número impar de factores negativos produce un resultado negativo: (-) × (-) × (-) = (-).",
+    "temaId": "tem_000004",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000087",
+    "tipo": "vf",
+    "enunciado": "La resta de dos enteros negativos siempre produce como resultado otro número negativo.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": false,
+    "retroalimentacion": "Depende de las magnitudes: por ejemplo, (-2) - (-5) = -2 + 5 = +3 (resultado positivo).",
+    "temaId": "tem_000004",
+    "nivel": 4,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000088",
+    "tipo": "opcion",
+    "enunciado": "¿Cuál es la justificación conceptual que explica por qué restar un número negativo equivale a sumar su opuesto positivo?",
+    "opciones": [
+      "Porque quitar o cancelar una deuda equivale financieramente a obtener una ganancia",
+      "Porque los números negativos no pueden operarse aritméticamente",
+      "Porque se aplica una convención arbitraria sin base física",
+      "Porque los signos se eliminan en la recta numérica"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Eliminar o sustraer una deuda incrementa el saldo neto disponible.",
+    "temaId": "tem_000004",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000089",
+    "tipo": "vf",
+    "enunciado": "La incorporación de los números enteros negativos en el sistema numérico permitió dar solución general a cualquier sustracción a - b.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "En los números naturales la resta a - b solo era posible si a ≥ b. Los negativos completaron la cerradura de la resta.",
+    "temaId": "tem_000004",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000090",
+    "tipo": "completar",
+    "enunciado": "El conjunto de los números enteros está formado por los positivos, los negativos y el ____.",
+    "opciones": [],
+    "correcta": "cero",
+    "retroalimentacion": "Z = Z- ∪ {0} ∪ Z+.",
+    "temaId": "tem_000004",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000091",
+    "tipo": "opcion",
+    "enunciado": "¿Cómo evalúas el impacto del uso de metáforas cotidianas (temperatura, deudas, ascensor) en el aprendizaje de enteros negativos?",
+    "opciones": [
+      "Proporcionan anclajes cognitivos intuitivos que facilitan la asimilación antes de la formalización algebraica",
+      "Generan confusiones irreparables en los alumnos",
+      "Solo son útiles para educación infantil pero no en secundaria",
+      "Dificultan la comprensión de la recta geométrica"
+    ],
+    "correcta": 0,
+    "retroalimentacion": "Las representaciones situadas en contextos familiares facilitan la construcción de significados matemáticos sólidos.",
+    "temaId": "tem_000004",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
+  },
+  {
+    "id": "pre_000092",
+    "tipo": "vf",
+    "enunciado": "La retroalimentación formativa inmediata en los cuestionarios de matemáticas ayuda a corregir concepciones erróneas comunes sobre los signos.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "retroalimentacion": "Explicar el razonamiento detrás de cada error fortalece la metacognición y el dominio procedimental.",
+    "temaId": "tem_000004",
+    "nivel": 5,
+    "origen": "ia",
+    "estado": "aprobado",
+    "fecha": "2026-10-25T16:55:00.000Z"
   }
 ]

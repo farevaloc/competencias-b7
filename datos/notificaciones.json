@@ -1,0 +1,11 @@
+[
+  {
+    "usuarioId": "usu_000002",
+    "tipo": "alerta",
+    "mensaje": "El banco de preguntas para \"Evaluación Formativa y Gamificación Digital\" (nivel 1) tiene pocas preguntas aprobadas y debió reutilizarse contenido.",
+    "enlace": "/paginas/banco-preguntas.html?temaId=tem_000002",
+    "leida": false,
+    "id": "not_000001",
+    "fecha": "2026-10-25T16:32:38.657Z"
+  }
+]

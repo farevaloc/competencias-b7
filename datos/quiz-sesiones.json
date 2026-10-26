@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "usuarioId": "usu_000004",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "preguntasIds": [
+      "preg_test_003",
+      "preg_test_011",
+      "preg_test_009",
+      "preg_test_008",
+      "preg_test_010",
+      "preg_test_005",
+      "preg_test_002",
+      "preg_test_007",
+      "preg_test_001",
+      "preg_test_006"
+    ],
+    "respuestas": {},
+    "inicio": "2026-10-25T16:32:28.876Z",
+    "finalizada": false,
+    "id": "qui_000001",
+    "fecha": "2026-10-25T16:32:28.876Z"
+  },
+  {
+    "usuarioId": "usu_000004",
+    "temaId": "tem_000002",
+    "nivel": 1,
+    "preguntasIds": [
+      "pre_000007",
+      "pre_000006",
+      "pre_000009",
+      "pre_000008",
+      "pre_000010"
+    ],
+    "respuestas": {},
+    "inicio": "2026-10-25T16:32:38.658Z",
+    "finalizada": false,
+    "id": "qui_000002",
+    "fecha": "2026-10-25T16:32:38.658Z"
+  }
+]

@@ -36,18 +36,12 @@ function barajar(lista) {
 }
 
 /**
- * Valida que el usuario sea estudiante y tenga acceso al tema solicitado
+ * Valida que el usuario tenga acceso al tema solicitado (estudiante, docente o admin)
  */
-async function validarAccesoEstudianteTema(usuario, temaId) {
+async function validarAccesoQuizTema(usuario, temaId) {
   if (!usuario) {
     const error = new Error('Usuario no autenticado');
     error.estado = 401;
-    throw error;
-  }
-
-  if (usuario.rol !== 'estudiante') {
-    const error = new Error('Solo los estudiantes tienen acceso al motor de quiz');
-    error.estado = 403;
     throw error;
   }
 
@@ -64,6 +58,10 @@ async function validarAccesoEstudianteTema(usuario, temaId) {
     throw error;
   }
 
+  if (usuario.rol === 'admin') {
+    return asignaturaId;
+  }
+
   const permitidas = await asignaturasDe(usuario);
   if (!permitidas.includes(asignaturaId)) {
     const error = new Error('No tienes acceso al tema especificado');
@@ -75,10 +73,12 @@ async function validarAccesoEstudianteTema(usuario, temaId) {
 }
 
 // 1. GET /api/quiz/estado?temaId=
-router.get('/quiz/estado', exigirRol('estudiante'), async (req, res, next) => {
+router.get('/quiz/estado', exigirRol('estudiante', 'docente', 'admin'), async (req, res, next) => {
   try {
     const { temaId } = req.query;
-    await validarAccesoEstudianteTema(req.usuario, temaId);
+    await validarAccesoQuizTema(req.usuario, temaId);
+
+    const esDocenteOAdmin = req.usuario.rol === 'docente' || req.usuario.rol === 'admin';
 
     // Cargar logros del estudiante para verificar el nivelQuiz en este tema
     const todosLogros = await almacen.leer('logros');
@@ -100,13 +100,34 @@ router.get('/quiz/estado', exigirRol('estudiante'), async (req, res, next) => {
       s.finalizada
     );
 
+    // Cargar preguntas aprobadas de este tema
+    const todasPreguntas = await almacen.leer('preguntas');
+    const preguntasTema = todasPreguntas.filter(p =>
+      p.temaId === temaId &&
+      (p.estado === 'aprobado' || p.estado === 'aprobada' || !p.estado)
+    );
+
     const niveles = [1, 2, 3, 4, 5].map(n => {
-      // Determinar estado: el nivel 1 siempre está disponible; nivel n si el n - 1 está aprobado
+      const preguntasNivel = preguntasTema.filter(p => Number(p.nivel) === n);
+      const totalPreguntas = preguntasNivel.length;
+
+      // Determinar estado: docente/admin siempre tienen disponibles todos los niveles para prueba
       let estado = 'bloqueado';
-      if (nivelAprobadoTema >= n) {
+      if (esDocenteOAdmin) {
+        estado = 'disponible';
+      } else if (nivelAprobadoTema >= n) {
         estado = 'aprobado';
       } else if (n === 1 || nivelAprobadoTema >= n - 1) {
         estado = 'disponible';
+      } else if (totalPreguntas > 0) {
+        // Si el docente creó preguntas en este nivel (por ejemplo nivel 4 con IA)
+        // y los niveles anteriores carecen de preguntas, se desbloquea para que no quede inaccesible
+        const algunAnteriorVacio = [1, 2, 3, 4, 5]
+          .filter(lvl => lvl < n)
+          .some(lvl => preguntasTema.filter(p => Number(p.nivel) === lvl).length === 0);
+        if (algunAnteriorVacio) {
+          estado = 'disponible';
+        }
       }
 
       // Calcular mejor porcentaje histórico en ese nivel
@@ -132,7 +153,8 @@ router.get('/quiz/estado', exigirRol('estudiante'), async (req, res, next) => {
         nivel: n,
         nombre: NOMBRES_NIVELES[n],
         estado,
-        mejorPorcentaje: mejorPct
+        mejorPorcentaje: mejorPct,
+        totalPreguntas
       };
     });
 
@@ -143,12 +165,13 @@ router.get('/quiz/estado', exigirRol('estudiante'), async (req, res, next) => {
 });
 
 // 2. POST /api/quiz/iniciar { temaId, nivel }
-router.post('/quiz/iniciar', exigirRol('estudiante'), async (req, res, next) => {
+router.post('/quiz/iniciar', exigirRol('estudiante', 'docente', 'admin'), async (req, res, next) => {
   try {
     const { temaId } = req.body;
     const nivel = Number(req.body.nivel);
 
-    const asignaturaId = await validarAccesoEstudianteTema(req.usuario, temaId);
+    const asignaturaId = await validarAccesoQuizTema(req.usuario, temaId);
+    const esDocenteOAdmin = req.usuario.rol === 'docente' || req.usuario.rol === 'admin';
 
     if (isNaN(nivel) || nivel < 1 || nivel > 5) {
       const error = new Error('El nivel debe ser un número entero entre 1 y 5');
@@ -156,35 +179,45 @@ router.post('/quiz/iniciar', exigirRol('estudiante'), async (req, res, next) => 
       throw error;
     }
 
-    // Verificar que el nivel esté disponible para el estudiante
-    const todosLogros = await almacen.leer('logros');
-    const miLogro = todosLogros.find(l => l.usuarioId === req.usuario.id);
-    const nivelAprobadoTema = (miLogro && miLogro.nivelQuiz && Number(miLogro.nivelQuiz[temaId])) || 0;
-
-    const estaDisponible = (nivel === 1) || (nivelAprobadoTema >= nivel - 1);
-    if (!estaDisponible) {
-      const error = new Error(`El nivel ${nivel} aún está bloqueado. Debes aprobar primero el nivel anterior.`);
-      error.estado = 400;
-      throw error;
-    }
-
-    // Reglas de quiz
-    const reglas = await almacen.leerConfig('reglas-gamificacion');
-    const preguntasPorNivel = (reglas.quiz && Number(reglas.quiz.preguntasPorNivel)) || 10;
-
     // Buscar preguntas aprobadas de ese tema y nivel
     const todasPreguntas = await almacen.leer('preguntas');
     const preguntasDisponibles = todasPreguntas.filter(p =>
       p.temaId === temaId &&
       Number(p.nivel) === nivel &&
-      p.estado === 'aprobado'
+      (p.estado === 'aprobado' || p.estado === 'aprobada' || !p.estado)
     );
 
     if (preguntasDisponibles.length === 0) {
-      const error = new Error('No hay preguntas aprobadas disponibles para este tema y nivel');
+      const error = new Error(`No hay preguntas aprobadas disponibles para el nivel ${nivel} de este tema. ${esDocenteOAdmin ? 'Como docente, puedes generarlas o crearlas desde el Gestor de Cuestionarios.' : 'Tu docente debe habilitar preguntas en este nivel.'}`);
       error.estado = 400;
       throw error;
     }
+
+    // Verificar que el nivel esté disponible para el estudiante (docente y admin siempre pueden previsualizar)
+    if (!esDocenteOAdmin) {
+      const preguntasTema = todasPreguntas.filter(p =>
+        p.temaId === temaId &&
+        (p.estado === 'aprobado' || p.estado === 'aprobada' || !p.estado)
+      );
+      const algunAnteriorVacio = [1, 2, 3, 4, 5]
+        .filter(lvl => lvl < nivel)
+        .some(lvl => preguntasTema.filter(p => Number(p.nivel) === lvl).length === 0);
+
+      const todosLogros = await almacen.leer('logros');
+      const miLogro = todosLogros.find(l => l.usuarioId === req.usuario.id);
+      const nivelAprobadoTema = (miLogro && miLogro.nivelQuiz && Number(miLogro.nivelQuiz[temaId])) || 0;
+
+      const estaDisponible = (nivel === 1) || (nivelAprobadoTema >= nivel - 1) || algunAnteriorVacio;
+      if (!estaDisponible) {
+        const error = new Error(`El nivel ${nivel} aún está bloqueado. Debes aprobar primero el nivel anterior.`);
+        error.estado = 400;
+        throw error;
+      }
+    }
+
+    // Reglas de quiz
+    const reglas = await almacen.leerConfig('reglas-gamificacion');
+    const preguntasPorNivel = (reglas.quiz && Number(reglas.quiz.preguntasPorNivel)) || 10;
 
     // Buscar sesiones previas del estudiante para saber qué preguntas ya vio
     const todasSesiones = await almacen.leer('quiz-sesiones');
@@ -290,7 +323,7 @@ router.post('/quiz/iniciar', exigirRol('estudiante'), async (req, res, next) => 
 });
 
 // 3. POST /api/quiz/responder { sesionId, preguntaId, respuesta }
-router.post('/quiz/responder', exigirRol('estudiante'), async (req, res, next) => {
+router.post('/quiz/responder', exigirRol('estudiante', 'docente', 'admin'), async (req, res, next) => {
   try {
     const { sesionId, preguntaId, respuesta } = req.body;
 
@@ -387,7 +420,7 @@ router.post('/quiz/responder', exigirRol('estudiante'), async (req, res, next) =
 });
 
 // 4. POST /api/quiz/finalizar { sesionId }
-router.post('/quiz/finalizar', exigirRol('estudiante'), async (req, res, next) => {
+router.post('/quiz/finalizar', exigirRol('estudiante', 'docente', 'admin'), async (req, res, next) => {
   try {
     const { sesionId } = req.body;
 
@@ -456,41 +489,45 @@ router.post('/quiz/finalizar', exigirRol('estudiante'), async (req, res, next) =
       fechaFin: new Date().toISOString()
     });
 
-    // Si aprueba, primero actualiza logros.nivelQuiz[temaId] al máximo
-    if (aprobado) {
-      const todosLogros = await almacen.leer('logros');
-      let miLogro = todosLogros.find(l => l.usuarioId === req.usuario.id);
-      if (!miLogro) {
-        miLogro = {
-          usuarioId: req.usuario.id,
-          puntos: 0,
-          insignias: [],
-          nivelQuiz: {}
-        };
-        miLogro = await almacen.agregar('logros', miLogro);
-      }
-      miLogro.nivelQuiz = miLogro.nivelQuiz || {};
-      const nivelPrevio = Number(miLogro.nivelQuiz[sesion.temaId]) || 0;
-      miLogro.nivelQuiz[sesion.temaId] = Math.max(nivelPrevio, Number(sesion.nivel));
+    let resultadoGamificacion = { puntosGanados: 0, insigniasNuevas: [] };
 
-      await almacen.actualizar('logros', miLogro.id, {
-        nivelQuiz: miLogro.nivelQuiz
+    if (req.usuario.rol === 'estudiante') {
+      // Si aprueba, primero actualiza logros.nivelQuiz[temaId] al máximo
+      if (aprobado) {
+        const todosLogros = await almacen.leer('logros');
+        let miLogro = todosLogros.find(l => l.usuarioId === req.usuario.id);
+        if (!miLogro) {
+          miLogro = {
+            usuarioId: req.usuario.id,
+            puntos: 0,
+            insignias: [],
+            nivelQuiz: {}
+          };
+          miLogro = await almacen.agregar('logros', miLogro);
+        }
+        miLogro.nivelQuiz = miLogro.nivelQuiz || {};
+        const nivelPrevio = Number(miLogro.nivelQuiz[sesion.temaId]) || 0;
+        miLogro.nivelQuiz[sesion.temaId] = Math.max(nivelPrevio, Number(sesion.nivel));
+
+        await almacen.actualizar('logros', miLogro.id, {
+          nivelQuiz: miLogro.nivelQuiz
+        });
+      }
+
+      // En todos los casos llama a procesarIntento para estudiantes
+      resultadoGamificacion = await procesarIntento(req.usuario, {
+        actividad: 'quiz',
+        temaId: sesion.temaId,
+        nivel: Number(sesion.nivel),
+        puntaje: aciertos,
+        maximo: total,
+        errores,
+        duracionSeg,
+        detalle: {
+          aprobado
+        }
       });
     }
-
-    // En todos los casos llama a procesarIntento
-    const resultadoGamificacion = await procesarIntento(req.usuario, {
-      actividad: 'quiz',
-      temaId: sesion.temaId,
-      nivel: Number(sesion.nivel),
-      puntaje: aciertos,
-      maximo: total,
-      errores,
-      duracionSeg,
-      detalle: {
-        aprobado
-      }
-    });
 
     res.json({
       porcentaje,
@@ -498,8 +535,10 @@ router.post('/quiz/finalizar', exigirRol('estudiante'), async (req, res, next) =
       aciertos,
       total,
       repasar,
-      puntosGanados: resultadoGamificacion.puntosGanados,
-      insigniasNuevas: resultadoGamificacion.insigniasNuevas
+      puntosGanados: resultadoGamificacion?.puntosGanados || 0,
+      insigniasNuevas: resultadoGamificacion?.insigniasNuevas || [],
+      resultado: resultadoGamificacion,
+      modoDocente: req.usuario.rol !== 'estudiante'
     });
   } catch (err) {
     next(err);

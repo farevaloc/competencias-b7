@@ -115,17 +115,30 @@ function renderizarPrincipal() {
 
   const aprobadasNivelActual = conteoAprobadas[nivelActual] || 0;
   const preguntasNivel = todasLasPreguntas.filter(p => Number(p.nivel) === nivelActual);
+  const totalAprobadas = Object.values(conteoAprobadas).reduce((a, b) => a + b, 0);
+  const todosNivelesConPreguntas = [1, 2, 3, 4, 5].every(n => conteoAprobadas[n] > 0);
 
   contenedor.innerHTML = `
     <header class="banco-cabecera">
       <div class="banco-cabecera__fila">
-        <h1 class="banco-cabecera__titulo">Banco de preguntas</h1>
+        <div>
+          <h1 class="banco-cabecera__titulo">Gestor de Cuestionarios y Quizzes</h1>
+          <p style="margin: 4px 0 0 0; font-size: var(--tamano-s); color: var(--texto-suave);">
+            Crea, administra y genera cuestionarios interactivos por niveles de Bloom con Inteligencia Artificial.
+          </p>
+        </div>
         <div style="display: flex; gap: var(--espaciado-s); flex-wrap: wrap;">
-          <button type="button" class="btn btn--secundario" id="btnGenerarIA">
-            ✨ Generar con IA
+          <a href="/paginas/quiz.html?temaId=${encodeURIComponent(temaActualId)}" class="btn btn--texto" id="btnProbarQuiz" target="_blank" title="Probar el quiz de este tema como estudiante">
+            👁️ Probar Quiz
+          </a>
+          <button type="button" class="btn btn--primario" id="btnCrearQuizIA" title="Crear o completar un quiz con IA para este tema">
+            🎯 Crear Quiz con IA
           </button>
-          <button type="button" class="btn btn--primario" id="btnNuevaPregunta">
-            + Nueva pregunta
+          <button type="button" class="btn btn--secundario" id="btnGenerarIA" title="Generar propuestas de preguntas con IA">
+            ✨ Propuestas IA
+          </button>
+          <button type="button" class="btn btn--secundario" id="btnNuevaPregunta" title="Crear una pregunta manual">
+            + Manual
           </button>
         </div>
       </div>
@@ -139,6 +152,28 @@ function renderizarPrincipal() {
             </option>
           `).join('')}
         </select>
+      </div>
+
+      <!-- Banner de estado del Quiz para el tema seleccionado -->
+      <div class="tarjeta" style="padding: var(--espaciado-m); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--espaciado-m); border-left: 4px solid ${todosNivelesConPreguntas ? 'var(--exito)' : 'var(--advertencia)'}; background: var(--superficie);">
+        <div>
+          <div style="font-weight: var(--peso-negrita); font-size: var(--tamano-m);">
+            ${todosNivelesConPreguntas ? '✅ Quiz Activo y Habilitado para Estudiantes' : '⚠️ Quiz Incompleto para Estudiantes'}
+          </div>
+          <div style="font-size: var(--tamano-xs); color: var(--texto-suave); margin-top: 2px;">
+            ${todosNivelesConPreguntas
+              ? `Este tema cuenta con ${totalAprobadas} preguntas aprobadas en los 5 niveles cognitivos de Bloom.`
+              : `Faltan preguntas en algunos niveles. Usa "Crear Quiz con IA" para habilitar todos los niveles para los estudiantes.`}
+          </div>
+        </div>
+        <div style="display: flex; gap: var(--espaciado-s);">
+          <button type="button" class="btn btn--primario btn--pequeno" id="btnCrearQuizBanner">
+            ✨ ${todosNivelesConPreguntas ? 'Generar más preguntas' : 'Completar Quiz con IA'}
+          </button>
+          <a href="/paginas/quiz.html?temaId=${encodeURIComponent(temaActualId)}" class="btn btn--secundario btn--pequeno" target="_blank">
+            👁️ Probar Quiz
+          </a>
+        </div>
       </div>
     </header>
 
@@ -159,20 +194,20 @@ function renderizarPrincipal() {
       `).join('')}
     </nav>
 
-    <!-- Aviso si hay menos de 20 preguntas aprobadas en el nivel actual -->
-    ${aprobadasNivelActual < 20 ? `
+    <!-- Aviso si hay pocas preguntas aprobadas en el nivel actual -->
+    ${aprobadasNivelActual < 5 ? `
       <div class="banco-aviso-aprobadas" role="status">
         <span style="font-size: var(--tamano-l);" aria-hidden="true">⚠️</span>
         <div>
-          <strong>Atención:</strong> Este nivel cuenta con <strong>${aprobadasNivelActual} de 20 preguntas aprobadas</strong> recomendadas.
-          Se aconseja contar con al menos 20 preguntas para que el quiz evalúe con variedad aleatoria.
+          <strong>Atención:</strong> Este nivel cuenta con <strong>${aprobadasNivelActual} pregunta(s) aprobada(s)</strong>.
+          Se recomienda generar preguntas con IA para que el nivel esté disponible para tus estudiantes.
         </div>
       </div>
     ` : ''}
 
     <div class="banco-barra-acciones">
       <span style="font-size: var(--tamano-s); color: var(--texto-suave);">
-        Mostrando ${preguntasNivel.length} pregunta(s) en ${NOMBRES_NIVELES[nivelActual]}
+        Mostrando ${preguntasNivel.length} pregunta(s) en ${NOMBRES_NIVELES[nivelActual]} (${aprobadasNivelActual} aprobadas)
       </span>
     </div>
 
@@ -180,10 +215,15 @@ function renderizarPrincipal() {
     <section class="banco-lista" aria-label="Lista de preguntas del nivel actual">
       ${preguntasNivel.length === 0 ? `
         <div class="tarjeta" style="text-align: center; padding: var(--espaciado-xl);">
-          <p style="color: var(--texto-suave);">No hay preguntas registradas en este nivel.</p>
-          <button type="button" class="btn btn--secundario btn--pequeno" style="margin-top: var(--espaciado-s);" id="btnCrearPrimera">
-            Crear la primera pregunta
-          </button>
+          <p style="color: var(--texto-suave);">No hay preguntas registradas en ${NOMBRES_NIVELES[nivelActual]}.</p>
+          <div style="display: flex; justify-content: center; gap: var(--espaciado-s); margin-top: var(--espaciado-s); flex-wrap: wrap;">
+            <button type="button" class="btn btn--primario btn--pequeno" id="btnGenerarNivelDirecto">
+              ✨ Generar 5 preguntas para este nivel con IA
+            </button>
+            <button type="button" class="btn btn--secundario btn--pequeno" id="btnCrearPrimera">
+              + Crear manualmente
+            </button>
+          </div>
         </div>
       ` : preguntasNivel.map(p => renderizarTarjetaPregunta(p)).join('')}
     </section>
@@ -203,6 +243,17 @@ function renderizarPrincipal() {
       renderizarPrincipal();
     });
   });
+
+  const btnCrearQuizIA = document.getElementById('btnCrearQuizIA');
+  if (btnCrearQuizIA) btnCrearQuizIA.addEventListener('click', () => abrirModalCrearQuiz());
+
+  const btnCrearQuizBanner = document.getElementById('btnCrearQuizBanner');
+  if (btnCrearQuizBanner) btnCrearQuizBanner.addEventListener('click', () => abrirModalCrearQuiz());
+
+  const btnGenerarNivelDirecto = document.getElementById('btnGenerarNivelDirecto');
+  if (btnGenerarNivelDirecto) {
+    btnGenerarNivelDirecto.addEventListener('click', () => generarPreguntasNivelDirecto(nivelActual));
+  }
 
   const btnCrear = document.getElementById('btnNuevaPregunta');
   if (btnCrear) btnCrear.addEventListener('click', () => abrirModalEdicion());
@@ -521,6 +572,174 @@ function abrirModalEdicion(pregunta = null) {
       ui.cargando(false);
     }
   });
+}
+
+/**
+ * Crea o completa un Quiz interactivo con IA
+ */
+function abrirModalCrearQuiz() {
+  const formEl = document.createElement('div');
+  formEl.className = 'form-pregunta';
+  formEl.innerHTML = `
+    <p style="color: var(--texto-suave); font-size: var(--tamano-s); margin-bottom: var(--espaciado-m);">
+      Esta función genera automáticamente preguntas pedagógicas alineadas con la Taxonomía de Bloom utilizando Inteligencia Artificial. Las preguntas quedarán <strong>aprobadas</strong> y el Quiz estará disponible inmediatamente para los estudiantes.
+    </p>
+
+    <div class="campo">
+      <label for="modalSelectModoQuiz">Modo de creación del Quiz:</label>
+      <select id="modalSelectModoQuiz" class="campo__control">
+        <option value="completo">🎯 Quiz completo (generar 5 preguntas para cada uno de los 5 niveles de Bloom: 25 preguntas)</option>
+        <option value="faltantes">⚡ Completar únicamente los niveles que no tienen preguntas</option>
+        <option value="nivel">✨ Generar preguntas solo para el nivel activo (${NOMBRES_NIVELES[nivelActual]})</option>
+      </select>
+    </div>
+
+    <div class="campo" id="campoCantidadQuiz" style="display: none;">
+      <label for="modalInputCantidadQuiz">Preguntas a generar (5 a 15):</label>
+      <input type="number" id="modalInputCantidadQuiz" class="campo__control" min="5" max="15" value="5">
+    </div>
+
+    <div class="campo">
+      <label style="display: flex; align-items: center; gap: var(--espaciado-xs); cursor: pointer;">
+        <input type="checkbox" id="chkPublicarTema" checked>
+        Asegurar que el tema esté publicado para que los estudiantes puedan acceder al Quiz
+      </label>
+    </div>
+  `;
+
+  const selModo = formEl.querySelector('#modalSelectModoQuiz');
+  const campoCant = formEl.querySelector('#campoCantidadQuiz');
+  selModo.addEventListener('change', (e) => {
+    campoCant.style.display = e.target.value === 'nivel' ? 'block' : 'none';
+  });
+
+  ui.modal({
+    titulo: '🎯 Crear Cuestionario / Quiz con IA',
+    contenido: formEl,
+    acciones: [
+      { texto: 'Cancelar', valor: null, clase: 'btn--secundario' },
+      { texto: '✨ Generar y Habilitar Quiz', valor: 'generar', clase: 'btn--primario', principal: true }
+    ]
+  }).then(async (accion) => {
+    if (accion !== 'generar') return;
+
+    const modo = selModo.value;
+    const cantidad = Number(formEl.querySelector('#modalInputCantidadQuiz').value) || 5;
+    const debePublicar = formEl.querySelector('#chkPublicarTema').checked;
+
+    ui.cargando(true);
+    try {
+      // Contar preguntas aprobadas actuales
+      const conteo = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+      todasLasPreguntas.forEach(p => {
+        const n = Number(p.nivel);
+        if (n >= 1 && n <= 5 && p.estado === 'aprobado') {
+          conteo[n] = (conteo[n] || 0) + 1;
+        }
+      });
+
+      let nivelesATratar = [];
+      if (modo === 'completo') {
+        nivelesATratar = [1, 2, 3, 4, 5];
+      } else if (modo === 'faltantes') {
+        nivelesATratar = [1, 2, 3, 4, 5].filter(lvl => (conteo[lvl] || 0) === 0);
+        if (nivelesATratar.length === 0) {
+          ui.aviso('Todos los niveles ya cuentan con preguntas aprobadas.', 'info');
+          return;
+        }
+      } else {
+        nivelesATratar = [nivelActual];
+      }
+
+      // Si se marcó asegurar publicación, actualizar el tema si estaba en borrador
+      if (debePublicar && temaActualId) {
+        try {
+          const temaObj = await api.obtener('temas', temaActualId);
+          if (temaObj && temaObj.estado !== 'publicado') {
+            await api.actualizar('temas', temaActualId, { estado: 'publicado' });
+          }
+        } catch (_) {
+          // Ignorar si no se puede actualizar tema
+        }
+      }
+
+      let totalCreadas = 0;
+      for (const lvl of nivelesATratar) {
+        const cant = modo === 'nivel' ? cantidad : 5;
+        try {
+          const propuestas = await api.ia('generar-preguntas', {
+            temaId: temaActualId,
+            nivel: lvl,
+            cantidad: cant
+          });
+
+          if (Array.isArray(propuestas) && propuestas.length > 0) {
+            for (const prop of propuestas) {
+              await api.crear('preguntas', {
+                tipo: prop.tipo,
+                enunciado: prop.enunciado,
+                opciones: prop.opciones || (prop.tipo === 'vf' ? ['Verdadero', 'Falso'] : []),
+                correcta: prop.correcta,
+                retroalimentacion: prop.retroalimentacion || '',
+                temaId: temaActualId,
+                nivel: lvl,
+                origen: 'ia',
+                estado: 'aprobado'
+              });
+              totalCreadas++;
+            }
+          }
+        } catch (subErr) {
+          console.warn(`Error en nivel ${lvl}:`, subErr);
+        }
+      }
+
+      ui.aviso(`¡Quiz creado exitosamente! Se agregaron ${totalCreadas} preguntas aprobadas. El cuestionario está disponible para los estudiantes.`, 'exito');
+      await cargarPreguntas();
+    } catch (err) {
+      ui.aviso(err.message || 'Error al crear el quiz con IA', 'error');
+    } finally {
+      ui.cargando(false);
+    }
+  });
+}
+
+/**
+ * Genera 5 preguntas directamente con IA para un nivel específico
+ */
+async function generarPreguntasNivelDirecto(nivel) {
+  ui.cargando(true);
+  try {
+    const propuestas = await api.ia('generar-preguntas', {
+      temaId: temaActualId,
+      nivel: Number(nivel),
+      cantidad: 5
+    });
+
+    if (Array.isArray(propuestas) && propuestas.length > 0) {
+      for (const prop of propuestas) {
+        await api.crear('preguntas', {
+          tipo: prop.tipo,
+          enunciado: prop.enunciado,
+          opciones: prop.opciones || (prop.tipo === 'vf' ? ['Verdadero', 'Falso'] : []),
+          correcta: prop.correcta,
+          retroalimentacion: prop.retroalimentacion || '',
+          temaId: temaActualId,
+          nivel: Number(nivel),
+          origen: 'ia',
+          estado: 'aprobado'
+        });
+      }
+      ui.aviso(`Se generaron y aprobaron ${propuestas.length} preguntas para ${NOMBRES_NIVELES[nivel]}`, 'exito');
+      await cargarPreguntas();
+    } else {
+      ui.aviso('No se recibieron preguntas del servicio de IA', 'advertencia');
+    }
+  } catch (err) {
+    ui.aviso(err.message || 'Error al generar preguntas', 'error');
+  } finally {
+    ui.cargando(false);
+  }
 }
 
 /**

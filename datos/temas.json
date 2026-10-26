@@ -81,35 +81,69 @@
   },
   {
     "unidadId": "uni_000002",
-    "titulo": "Positivos",
+    "titulo": "Números Enteros Positivos",
     "orden": 1,
-    "estado": "borrador",
-    "objetivos": [],
-    "resumen": "",
-    "ejemplos": [],
-    "erroresFrecuentes": [],
-    "preguntasGuia": [],
+    "estado": "publicado",
+    "objetivos": [
+      "Reconocer y representar los números enteros positivos en la recta numérica.",
+      "Resolver problemas cotidianos que involucran cantidades y magnitudes positivas."
+    ],
+    "resumen": "Los números enteros positivos representan cantidades superiores a cero. Se utilizan ampliamente para expresar aumentos, ganancias, temperaturas sobre cero y posiciones hacia la derecha en la recta numérica.",
+    "ejemplos": [
+      "Ganancia de $50 dólares (+50).",
+      "Temperatura de 24 grados Celsius sobre cero (+24)."
+    ],
+    "erroresFrecuentes": [
+      "Confundir el cero con un número entero positivo.",
+      "Omitir el signo positivo al contrastarlo con valores negativos."
+    ],
+    "preguntasGuia": [
+      "¿Por qué los números positivos se ubican a la derecha del cero?",
+      "¿Cuál es la relación entre los números naturales y los enteros positivos?"
+    ],
     "recursos": [],
-    "palabrasClave": [],
-    "dificultad": "intermedio",
-    "fuentes": "",
+    "palabrasClave": [
+      "Enteros",
+      "Positivos",
+      "Recta numérica",
+      "Matemáticas"
+    ],
+    "dificultad": "básico",
+    "fuentes": "Ministerio de Educación (2023). Currículo Nacional de Matemática.",
     "id": "tem_000003",
     "fecha": "2026-10-24T17:17:11.522Z"
   },
   {
     "unidadId": "uni_000002",
-    "titulo": "Negativos",
+    "titulo": "Números Enteros Negativos",
     "orden": 2,
-    "estado": "borrador",
-    "objetivos": [],
-    "resumen": "",
-    "ejemplos": [],
-    "erroresFrecuentes": [],
-    "preguntasGuia": [],
+    "estado": "publicado",
+    "objetivos": [
+      "Comprender el concepto y significado de los números enteros negativos.",
+      "Ubicar números negativos en la recta numérica y calcular su valor absoluto."
+    ],
+    "resumen": "Los números enteros negativos representan cantidades menores que cero. Son fundamentales para registrar deudas, pérdidas comerciales, temperaturas bajo cero y profundidades marítimas.",
+    "ejemplos": [
+      "Deuda bancaria de $30 dólares (-30).",
+      "Submarino a 150 metros bajo el nivel del mar (-150)."
+    ],
+    "erroresFrecuentes": [
+      "Creer que un número negativo con mayor valor absoluto es mayor que uno con menor valor absoluto (ej. pensar que -8 > -2).",
+      "Olvidar el signo menos en los resultados de operaciones."
+    ],
+    "preguntasGuia": [
+      "¿Cómo cambia el orden de los números a la izquierda del cero?",
+      "¿Qué representa el opuesto de un número entero?"
+    ],
     "recursos": [],
-    "palabrasClave": [],
+    "palabrasClave": [
+      "Enteros",
+      "Negativos",
+      "Deudas",
+      "Valor absoluto"
+    ],
     "dificultad": "intermedio",
-    "fuentes": "",
+    "fuentes": "Ministerio de Educación (2023). Currículo Nacional de Matemática.",
     "id": "tem_000004",
     "fecha": "2026-10-24T17:17:17.611Z"
   }

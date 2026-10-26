@@ -6,10 +6,14 @@ import { mostrarRetro, mostrarResumen } from '../nucleo/retroalimentacion.js';
 import { mostrarLogros } from '../nucleo/gamificacion.js';
 import { generarDiploma } from '../nucleo/pdf.js';
 
-await montarPlantilla({ titulo: 'Quiz por niveles', roles: ['estudiante'] });
+import * as sesion from '../nucleo/sesion.js';
+
+await montarPlantilla({ titulo: 'Quiz por niveles', roles: ['estudiante', 'docente', 'admin'] });
 
 let temaActual = null;
 let nivelesEstado = [];
+const usuarioActual = sesion.usuarioActual();
+const esDocenteOAdmin = usuarioActual && (usuarioActual.rol === 'docente' || usuarioActual.rol === 'admin');
 
 // Estado de la sesión de evaluación activa
 let sesionActiva = null; // { sesionId, nivel, preguntas, indiceActual }
@@ -43,10 +47,20 @@ function renderizarNiveles() {
   contenedor.innerHTML = `
     <header class="quiz-cabecera">
       <div class="quiz-cabecera__fila">
-        <h1 class="quiz-cabecera__titulo">Quiz por niveles</h1>
-        <button type="button" class="btn btn--secundario btn--pequeno" id="btnCambiarTema">
-          Cambiar tema
-        </button>
+        <div style="display: flex; align-items: center; gap: var(--espaciado-s); flex-wrap: wrap;">
+          <h1 class="quiz-cabecera__titulo">Quiz por niveles</h1>
+          ${esDocenteOAdmin ? '<span class="chip chip--advertencia" style="font-size: var(--tamano-xs);">👁️ Vista Previa (Docente)</span>' : ''}
+        </div>
+        <div style="display: flex; gap: var(--espaciado-s); flex-wrap: wrap;">
+          ${esDocenteOAdmin ? `
+            <a href="/paginas/banco-preguntas.html?temaId=${encodeURIComponent(temaActual.id)}" class="btn btn--primario btn--pequeno">
+              📝 Gestionar Preguntas
+            </a>
+          ` : ''}
+          <button type="button" class="btn btn--secundario btn--pequeno" id="btnCambiarTema">
+            Cambiar tema
+          </button>
+        </div>
       </div>
 
       <div class="quiz-tema-activo">
@@ -101,6 +115,56 @@ function renderizarTarjetaNivel(n) {
   const badgeClase = `tarjeta-nivel__estado-badge--${n.estado}`;
   const estadoTexto = n.estado === 'aprobado' ? '✓ Aprobado' : (n.estado === 'disponible' ? '🔓 Disponible' : '🔒 Bloqueado');
   const pct = Number(n.mejorPorcentaje) || 0;
+  const totalPregs = typeof n.totalPreguntas === 'number' ? n.totalPreguntas : null;
+
+  let infoPreguntasHtml = '';
+  if (totalPregs !== null) {
+    if (totalPregs > 0) {
+      infoPreguntasHtml = `<span style="font-size: var(--tamano-xs); color: var(--texto-suave);">📝 ${totalPregs} pregunta(s)</span>`;
+    } else {
+      infoPreguntasHtml = `<span style="font-size: var(--tamano-xs); color: var(--advertencia);">⚠️ Sin preguntas aún</span>`;
+    }
+  }
+
+  let accionesHtml = '';
+  if (n.estado === 'disponible') {
+    if (totalPregs === 0) {
+      if (esDocenteOAdmin) {
+        accionesHtml = `
+          <a href="/paginas/banco-preguntas.html?temaId=${encodeURIComponent(temaActual.id)}" class="btn btn--primario btn--pequeno">
+            ✨ Generar con IA
+          </a>
+        `;
+      } else {
+        accionesHtml = `
+          <button type="button" class="btn btn--secundario" disabled title="Tu docente aún no ha registrado preguntas en este nivel">
+            Pendiente de preguntas
+          </button>
+        `;
+      }
+    } else {
+      accionesHtml = `
+        <button type="button" class="btn btn--primario btn-iniciar-nivel" data-nivel="${n.nivel}">
+          Iniciar Quiz
+        </button>
+      `;
+    }
+  } else if (n.estado === 'aprobado') {
+    accionesHtml = `
+      <button type="button" class="btn btn--secundario btn-iniciar-nivel" data-nivel="${n.nivel}">
+        Repetir Quiz
+      </button>
+      <button type="button" class="btn btn--texto btn-descargar-diploma" data-nivel="${n.nivel}">
+        🎓 Descargar diploma
+      </button>
+    `;
+  } else {
+    accionesHtml = `
+      <button type="button" class="btn btn--secundario" disabled>
+        Bloqueado
+      </button>
+    `;
+  }
 
   return `
     <article class="tarjeta-nivel tarjeta-nivel--${n.estado}" id="nivel-card-${n.nivel}">
@@ -114,37 +178,21 @@ function renderizarTarjetaNivel(n) {
         </div>
 
         <div style="margin-top: var(--espaciado-m);">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--espaciado-xs);">
             <span class="tarjeta-nivel__porcentaje">Mejor puntaje</span>
             <strong style="font-size: var(--tamano-s); color: ${pct >= 70 ? 'var(--exito)' : 'var(--texto)'};">${pct}%</strong>
           </div>
           <div class="tarjeta-nivel__barra">
             <div class="tarjeta-nivel__barra-llenado" style="width: ${pct}%;"></div>
           </div>
+          <div style="margin-top: var(--espaciado-xs); text-align: right;">
+            ${infoPreguntasHtml}
+          </div>
         </div>
       </div>
 
       <div class="tarjeta-nivel__acciones">
-        ${n.estado === 'disponible' ? `
-          <button type="button" class="btn btn--primario btn-iniciar-nivel" data-nivel="${n.nivel}">
-            Iniciar Quiz
-          </button>
-        ` : ''}
-
-        ${n.estado === 'aprobado' ? `
-          <button type="button" class="btn btn--secundario btn-iniciar-nivel" data-nivel="${n.nivel}">
-            Repetir Quiz
-          </button>
-          <button type="button" class="btn btn--texto btn-descargar-diploma" data-nivel="${n.nivel}">
-            🎓 Descargar diploma
-          </button>
-        ` : ''}
-
-        ${n.estado === 'bloqueado' ? `
-          <button type="button" class="btn btn--secundario" disabled>
-            Bloqueado
-          </button>
-        ` : ''}
+        ${accionesHtml}
       </div>
     </article>
   `;
